@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fbf9f5;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#e0bfba", "on-secondary-container": "#78520e", "on-surface": "#1b1c1a", "error-container": "#ffdad6", "on-primary-container": "#ffdeda", "on-primary-fixed-variant": "#8b1912", "on-secondary-fixed-variant": "#614000", "vermilion-deep": "#9C2E24", "error": "#ba1a1a", "on-error": "#ffffff", "surface-container-high": "#eae8e4", "on-tertiary-container": "#f6e1d7", "primary-container": "#b83a2e", "text-main": "#2A1F19", "outline": "#8c716d", "state-info": "#4A6E82", "primary-fixed-dim": "#ffb4a9", "gold-accent": "#D4A359", "tertiary": "#594b44", "state-warning": "#C5782A", "secondary": "#7e5713", "border-neutral": "#EBE4D8", "surface-container": "#efeeea", "on-surface-variant": "#59413e", "surface-container-low": "#f5f3ef", "on-secondary": "#ffffff", "bg-surface-elevated": "#FFFFFF", "secondary-fixed": "#ffddb1", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "border-accent": "#E6C587", "background": "#fbf9f5", "state-warning-bg": "#FCF5ED", "vermilion-primary": "#B83A2E", "surface-container-highest": "#e4e2de", "inverse-primary": "#ffb4a9", "inverse-surface": "#30312e", "secondary-fixed-dim": "#f2be71", "state-success-bg": "#EBF4EF", "bg-canvas": "#FDFBF7", "tertiary-fixed-dim": "#d6c3b9", "gold-light": "#F7EEDB", "text-subtle": "#9E8E84", "on-tertiary": "#ffffff", "state-info-bg": "#EDF4F7", "on-background": "#1b1c1a", "inverse-on-surface": "#f2f0ed", "surface-dim": "#dbdad6", "tertiary-container": "#73635b", "primary": "#962219", "bg-surface": "#F7F3EB", "secondary-container": "#fec97b", "on-tertiary-fixed": "#241913", "vermilion-soft": "#FDF1F0", "on-secondary-fixed": "#291800", "text-muted": "#6E5D53", "surface-variant": "#e4e2de", "primary-fixed": "#ffdad5", "tertiary-fixed": "#f3ded5", "state-success": "#3E7B54", "on-primary-fixed": "#410001", "surface": "#fbf9f5", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#52443d", "surface-bright": "#fbf9f5", "surface-tint": "#ad3227" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.75rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-2xl": "3rem", "gutter": "1rem", "space-xs": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin-tablet": "2rem", "margin-desktop": "2.5rem" }, "fontFamily": { "headline-lg-mobile": ["Merriweather"], "label-md": ["Be Vietnam Pro"], "headline-lg": ["Merriweather"], "label-sm": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "headline-md": ["Merriweather"], "body-lg": ["Be Vietnam Pro"], "title-md": ["Be Vietnam Pro"], "headline-xl-mobile": ["Merriweather"], "body-md": ["Be Vietnam Pro"], "title-lg": ["Be Vietnam Pro"], "lunar-date": ["Merriweather"], "headline-xl": ["Merriweather"] }, "fontSize": { "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["26px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "lunar-date": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-bg-canvas text-text-main font-body-md flex flex-col min-h-screen selection:bg-gold-light selection:text-vermilion-deep"><header class="fixed top-0 inset-x-0 z-50 bg-bg-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(42,31,25,0.04)] pt-safe"><div class="h-16 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0 flex-1"><button aria-label="Quay lại" class="w-11 h-11 flex items-center justify-center rounded-full text-text-main active:scale-95 transition-transform flex-shrink-0 -ml-2" onclick="history.back()"><span class="material-symbols-outlined text-[24px]">arrow_back_ios_new</span></button><img alt="Lịch Cúng Việt Logo" class="h-7 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJgnEkrXoyCGasKfWkyzIBEhse66EawqK59advOOe9JvEK3Kw7ZwBbFqajSGjua-bvG4TeqOyMZfBEkGLwBT7AtIuCovSZ73gAeiroWtWwNAxYTdjwoeeIRYQT-4RvVb-oWfIrbIx_wCIEcT1djX5J1WGzAMY7UvyCTSLn7HFcUjdLg88F6Dgyaw6mR_i_U9XmMO65NagbpG50zMWlLZyJT8ZG6MJqqoXWDC0n5JM3po0F_l_4YiFg"/><h1 class="font-title-lg text-title-lg text-text-main truncate leading-tight">Chi Tiet Nghi Le</h1></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Hồ sơ" class="w-11 h-11 flex items-center justify-center rounded-full active:scale-95 transition-transform"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-border-accent/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRX8fKDrQaYDpNt2yGy0cPkdjr_5EeQbviugnUyzqpqbDynAmT7X01i401hDTlM_2kGrp7ZloeWJbxDNXHBmXw0NXiE79pS--V5Dt6Q1cPUKKN2UaWSs9iqh-POqN26vqTQlvmb0XsX_dyhOt5g8yrn1cpiTF4j9Ekoe2QAzCriK9NkA-gu32l1RQdjggLIixQfjFeWTDX6iYl-tUmr4Z_0299N--YNlpflPLxBOSlEGr0sXHnAUTb"/></button></div></div></header><main class="flex flex-col flex-grow relative w-full pt-16 pb-safe bg-bg-canvas"><div class="flex flex-col w-full pb-10 px-margin gap-space-md">
+<!-- Thanh điều hướng phụ trang nhã -->
+<div class="flex items-center justify-between pt-space-xs">
+<button class="inline-flex items-center gap-space-2xs text-text-muted active:text-vermilion-deep transition-colors py-1" onclick="history.back()">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+<span class="font-label-md text-label-md">Trở về lịch lễ</span>
+</button>
+<div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-vermilion-soft text-vermilion-deep font-label-sm text-label-sm shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-vermilion-primary animate-pulse"></span>
+      Đại lễ Thượng Nguyên
+    </div>
+</div>
+<!-- Hero Tiêu đề & Ngày Âm - Dương -->
+<div class="relative overflow-hidden rounded-xl bg-bg-surface-elevated shadow-sm p-space-md flex flex-col gap-space-xs">
+<div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-gold-light/40 pointer-events-none blur-2xl"></div>
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex-1">
+<span class="font-label-sm text-label-sm text-gold-accent uppercase tracking-wider block mb-1">Tiết Lễ Trọng Đại</span>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-text-main leading-snug">
+          Lễ Cúng Rằm Tháng Giêng
+        </h2>
+<p class="font-title-md text-title-md text-text-muted mt-0.5 font-normal italic">Tết Thượng Nguyên</p>
+</div>
+<div class="flex flex-col items-center justify-center px-3 py-2 rounded-lg bg-bg-surface shadow-inner text-center shrink-0">
+<span class="font-lunar-date text-lunar-date text-vermilion-deep font-semibold">15/01 AL</span>
+<span class="font-label-sm text-label-sm text-text-subtle">24/02/2024 DL</span>
+</div>
+</div>
+<!-- Đoạn trích ý nghĩa phong tục cổ truyền -->
+<div class="mt-space-xs p-3 rounded-lg bg-bg-surface flex items-start gap-2.5">
+<span class="material-symbols-outlined text-gold-accent text-[20px] shrink-0 mt-0.5">auto_stories</span>
+<p class="font-body-sm text-body-sm text-text-muted italic leading-relaxed">
+        “Cúng quanh năm không bằng Rằm tháng Giêng”. Dịp rằm đầu tiên của năm mới để con cháu khấn nguyện quốc thái dân an, cầu gia đạo thuận hòa, một năm hanh thông thuận lợi.
+      </p>
+</div>
+</div>
+<!-- Thẻ thông tin Khung giờ & Không gian hành lễ -->
+<div class="grid grid-cols-1 gap-2.5">
+<div class="rounded-xl bg-bg-surface-elevated shadow-sm p-3.5 flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-gold-light flex items-center justify-center shrink-0 text-secondary">
+<span class="material-symbols-outlined text-[22px]">schedule</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="font-label-md text-label-md text-text-main">Khung Giờ Hoàng Đạo</span>
+<span class="px-1.5 py-0.5 rounded bg-state-success-bg text-state-success font-label-sm text-label-sm">Đại cát</span>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+<strong class="text-text-main font-medium">Giờ Thìn</strong> (07:00 – 09:00) hoặc <strong class="text-text-main font-medium">Giờ Ngọ</strong> (11:00 – 13:00).
+        </p>
+</div>
+</div>
+<div class="rounded-xl bg-bg-surface-elevated shadow-sm p-3.5 flex items-start gap-3">
+<div class="w-10 h-10 rounded-lg bg-state-info-bg flex items-center justify-center shrink-0 text-state-info">
+<span class="material-symbols-outlined text-[22px]">temple_buddhist</span>
+</div>
+<div class="flex-1 min-w-0">
+<span class="font-label-md text-label-md text-text-main block mb-1">Không Gian Thờ Tự</span>
+<div class="flex flex-col gap-1 font-body-sm text-body-sm text-text-muted">
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-gold-accent shrink-0"></span>
+<span><strong class="text-text-main font-medium">Ban thờ Phật:</strong> Dâng mâm cúng thanh trai thuần khiết.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-vermilion-primary shrink-0"></span>
+<span><strong class="text-text-main font-medium">Ban Gia Tiên:</strong> Dâng cỗ mặn truyền thống hoặc cỗ chay.</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Ảnh minh họa mâm lễ trực quan -->
+<div class="relative w-full h-36 rounded-xl overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Traditional Vietnamese ancestor altar prepared for Tet Thuong Nguyen with fresh yellow chrysanthemum flowers, a steaming plate of sticky rice with momordica, boiled chicken holding a rose, bronze incense burner with gentle curling smoke, warm natural sunlight reflecting off lacquered wood and brass offering plates in a serene heritage house." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZl7Cvn2vIfsVnfKK3rQgwUs0fM8Ik9-13GBOVsTS3MdZvHbcI3jEQ4F2Y29hK12VnLHbAMpjM2DEFV_-_lyRBEGIS5BMHDgWRaXffyKbtZztUsVbAdETiFlGzferGB0Nj7ZCkKwiD83CLi0_fED6usIIDf8qp_I98N6Tl6a4sX_Q4JmWFuyPy2O6iif2NLgwdvQlvILQVuNqGwnFdMjTr6caJvksAoBP9sWH2C4EQVRJfQn0-lg_K"/>
+<div class="absolute inset-0 bg-gradient-to-t from-text-main/80 via-text-main/20 to-transparent flex items-end p-3">
+<p class="font-body-sm text-body-sm text-white/90">Gợi ý mâm cúng tròn vẹn phúc lành Tết Thượng Nguyên</p>
+</div>
+</div>
+<!-- Phân khu Lễ Vật với Chuyển Đổi Tab -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h3 class="font-title-lg text-title-lg text-text-main flex items-center gap-1.5">
+<span class="material-symbols-outlined text-vermilion-primary text-[20px]">inventory_2</span>
+        Sắm Lễ Vật Tham Khảo
+      </h3>
+<span class="font-label-sm text-label-sm text-text-subtle">Gợi ý truyền thống</span>
+</div>
+<!-- Custom Segmented Control -->
+<div class="grid grid-cols-2 p-1 rounded-xl bg-surface-container gap-1" id="altar-tabs">
+<button class="py-2 px-3 rounded-lg font-label-md text-label-md transition-all shadow-sm bg-bg-surface-elevated text-vermilion-deep font-semibold text-center flex items-center justify-center gap-1.5" id="tab-btn-man" onclick="switchTab('man')" type="button">
+<span class="material-symbols-outlined text-[16px]">dinner_dining</span>
+        Cỗ Mặn Gia Tiên
+      </button>
+<button class="py-2 px-3 rounded-lg font-label-md text-label-md transition-all text-text-muted hover:text-text-main text-center flex items-center justify-center gap-1.5" id="tab-btn-chay" onclick="switchTab('chay')" type="button">
+<span class="material-symbols-outlined text-[16px]">spa</span>
+        Lễ Chay Dâng Phật
+      </button>
+</div>
+<!-- Tab Content: Cỗ Mặn Gia Tiên -->
+<div class="flex flex-col gap-2 transition-opacity duration-200" id="content-man">
+<div class="bg-bg-surface-elevated rounded-xl p-space-sm shadow-sm space-y-2.5">
+<div class="flex items-center gap-2 pb-2 text-text-subtle font-label-sm text-label-sm border-b border-border-neutral/30">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+<span>Các lễ vật chính (chạm để xem chi tiết khi tạo checklist)</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-vermilion-primary mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Gà trống hoa luộc ngậm hoa hồng</span>
+<span class="font-body-sm text-body-sm text-text-muted">Chọn gà trống tơ, luộc da vàng bóng, mào cờ thẳng</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">1 con</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-vermilion-primary mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Xôi gấc đỏ son</span>
+<span class="font-body-sm text-body-sm text-text-muted">Tượng trưng cho sự may mắn, son sẻ cả năm</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">1 đĩa</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-vermilion-primary mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Bát canh măng miến mộc nhĩ &amp; giò lụa</span>
+<span class="font-body-sm text-body-sm text-text-muted">Hương vị Tết ấm cúng, tròn đầy dưỡng chất</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">Đủ món</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-vermilion-primary mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Trầu cau, chén rượu nếp &amp; nến đèn</span>
+<span class="font-body-sm text-body-sm text-text-muted">3 chén rượu, 1 quả cau têm trầu cánh phượng</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">1 bộ</span>
+</div>
+</div>
+</div>
+<!-- Tab Content: Lễ Chay Dâng Phật (Hidden by default) -->
+<div class="hidden flex-col gap-2 transition-opacity duration-200" id="content-chay">
+<div class="bg-bg-surface-elevated rounded-xl p-space-sm shadow-sm space-y-2.5">
+<div class="flex items-center gap-2 pb-2 text-text-subtle font-label-sm text-label-sm border-b border-border-neutral/30">
+<span class="material-symbols-outlined text-[16px]">checklist</span>
+<span>Lễ vật chay tịnh dâng Tam Bảo</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-gold-accent mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Hoa tươi hương ngát</span>
+<span class="font-body-sm text-body-sm text-text-muted">Hoa cúc kim cương vàng hoặc hoa sen, hoa huệ trắng</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">1 bình</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-gold-accent mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Mâm ngũ quả tươi thanh khiết</span>
+<span class="font-body-sm text-body-sm text-text-muted">5 loại quả tươi ngon, tránh quả gai góc nồng mùi</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">1 mâm</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-gold-accent mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Chè trôi nước hoặc chè hoa cau</span>
+<span class="font-body-sm text-body-sm text-text-muted">Cầu mong mọi việc đầu năm trôi chảy, viên mãn</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">3 bát</span>
+</div>
+<div class="flex items-start gap-2.5 py-1">
+<span class="w-2 h-2 rounded-full bg-gold-accent mt-1.5 shrink-0"></span>
+<div class="flex-1">
+<span class="font-body-md text-body-md font-medium text-text-main block">Nước suối thanh tịnh &amp; Trà sen</span>
+<span class="font-body-sm text-body-sm text-text-muted">Chén nước lọc tinh khiết, hương thơm dịu nhẹ</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-bg-surface text-text-muted shrink-0">1 khay</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Văn Khấn Cổ Truyền Rút Gọn -->
+<div class="rounded-xl bg-bg-surface-elevated shadow-sm p-space-md flex flex-col gap-2.5 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-vermilion-deep">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+<h4 class="font-title-md text-title-md text-text-main font-semibold">Văn Khấn Rằm Tháng Giêng</h4>
+</div>
+<button class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2 py-1 rounded bg-bg-surface text-text-muted active:text-vermilion-deep" onclick="copyVanKhan(this)">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+<span>Sao chép</span>
+</button>
+</div>
+<div class="p-3 rounded-lg bg-bg-surface text-text-main font-body-sm text-body-sm leading-relaxed space-y-2 text-justify">
+<p class="font-semibold text-center text-vermilion-deep">Nam mô A Di Đà Phật! (3 lần)</p>
+<p>Con lạy chín phương Trời, mười phương Chư Phật, Chư Phật mười phương.</p>
+<p>Con kính lạy Hoàng thiên Hậu thổ chư vị Tôn thần. Con kính lạy ngài Bản cảnh Thành hoàng, ngài Bản xứ Thổ địa, ngài Bản gia Táo quân cùng chư vị Tôn thần.</p>
+<p>Con kính lạy Cao Tằng Tổ Khảo, Cao Tằng Tổ Tỷ, Thúc Bá Đệ Huynh, Cô Di Tỷ Muội họ nội họ ngoại.</p>
+<p>Hôm nay là ngày Rằm tháng Giêng năm Giáp Thìn, tín chủ chúng con thành tâm sắm sửa hương hoa lễ vật, thắp nén tâm hương dâng lên trước án...</p>
+<p class="text-text-subtle italic text-right">... (Chạm để đọc toàn văn đầy đủ khi hành lễ)</p>
+</div>
+</div>
+<!-- Ghi Chú Phong Tục Ấm Áp -->
+<div class="p-3.5 rounded-xl bg-state-warning-bg flex items-start gap-2.5">
+<span class="material-symbols-outlined text-state-warning text-[20px] shrink-0 mt-0.5">tips_and_updates</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+<strong>Lời nhắc nếp xưa:</strong> Tùy theo nếp nhà và phong tục từng miền, mâm lễ có thể tinh giản tùy duyên, cốt ở tấm lòng thành kính dâng lên cội nguồn tổ tiên. Vàng mã chỉ nên dùng tối giản, văn minh và an toàn phòng hỏa.
+    </p>
+</div>
+<!-- Nhóm Nút Hành Động Trọng Tâm (Primary & Secondary) -->
+<div class="flex flex-col gap-2.5 mt-2">
+<!-- Nút hành động chính: Tạo kế hoạch chuẩn bị -->
+<button class="w-full h-12 rounded-lg bg-vermilion-primary active:bg-vermilion-deep text-on-primary font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow-sm active:scale-[0.98] transition-all" id="btn-create-plan" onclick="handleCreatePlan(this)">
+<span class="material-symbols-outlined text-[20px]">add_task</span>
+<span>Tạo kế hoạch chuẩn bị ngay</span>
+</button>
+<!-- Các nút phụ trợ: Sao chép & Thêm vào lịch -->
+<div class="grid grid-cols-2 gap-2.5">
+<button class="h-11 rounded-lg bg-bg-surface-elevated active:bg-bg-surface text-text-main font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all" onclick="handleShareChecklist(this)">
+<span class="material-symbols-outlined text-gold-accent text-[18px]">difference</span>
+<span>Nhân bản checklist</span>
+</button>
+<button class="h-11 rounded-lg bg-bg-surface-elevated active:bg-bg-surface text-text-main font-label-md text-label-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all" onclick="handleAddToCalendar(this)">
+<span class="material-symbols-outlined text-state-info text-[18px]">calendar_today</span>
+<span>Thêm vào lịch nhà</span>
+</button>
+</div>
+</div>
+<!-- Toast phản hồi tương tác nhẹ nhàng -->
+<div class="fixed bottom-6 inset-x-margin max-w-xs mx-auto py-2.5 px-4 rounded-full bg-text-main text-on-primary text-center font-label-md text-label-md shadow-lg opacity-0 pointer-events-none transition-opacity duration-300 z-50" id="toast-feedback">
+    Đã lưu kế hoạch thành công!
+  </div>
+</div>
+<script>
+  function switchTab(type) {
+    const btnMan = document.getElementById('tab-btn-man');
+    const btnChay = document.getElementById('tab-btn-chay');
+    const contentMan = document.getElementById('content-man');
+    const contentChay = document.getElementById('content-chay');
+
+    if (type === 'man') {
+      btnMan.className = 'py-2 px-3 rounded-lg font-label-md text-label-md transition-all shadow-sm bg-bg-surface-elevated text-vermilion-deep font-semibold text-center flex items-center justify-center gap-1.5';
+      btnChay.className = 'py-2 px-3 rounded-lg font-label-md text-label-md transition-all text-text-muted hover:text-text-main text-center flex items-center justify-center gap-1.5';
+      
+      contentMan.classList.remove('hidden');
+      contentMan.classList.add('flex');
+      contentChay.classList.add('hidden');
+      contentChay.classList.remove('flex');
+    } else {
+      btnChay.className = 'py-2 px-3 rounded-lg font-label-md text-label-md transition-all shadow-sm bg-bg-surface-elevated text-vermilion-deep font-semibold text-center flex items-center justify-center gap-1.5';
+      btnMan.className = 'py-2 px-3 rounded-lg font-label-md text-label-md transition-all text-text-muted hover:text-text-main text-center flex items-center justify-center gap-1.5';
+      
+      contentChay.classList.remove('hidden');
+      contentChay.classList.add('flex');
+      contentMan.classList.add('hidden');
+      contentMan.classList.remove('flex');
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('toast-feedback');
+    toast.textContent = msg;
+    toast.classList.remove('opacity-0', 'pointer-events-none');
+    toast.classList.add('opacity-100');
+    setTimeout(() => {
+      toast.classList.remove('opacity-100');
+      toast.classList.add('opacity-0', 'pointer-events-none');
+    }, 2200);
+  }
+
+  function handleCreatePlan(btn) {
+    showToast('Đã thêm 7 mục sắm lễ vào Danh sách của bạn!');
+  }
+
+  function copyVanKhan(btn) {
+    showToast('Đã sao chép văn khấn vào bộ nhớ tạm');
+  }
+
+  function handleShareChecklist(btn) {
+    showToast('Đã sao chép checklist lễ sang clipboard');
+  }
+
+  function handleAddToCalendar(btn) {
+    showToast('Đã cài nhắc hẹn cúng Rằm 07:00 ngày 24/02');
+  }
+</script></main></body></html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fbf9f5;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#e0bfba", "on-secondary-container": "#78520e", "on-surface": "#1b1c1a", "error-container": "#ffdad6", "on-primary-container": "#ffdeda", "on-primary-fixed-variant": "#8b1912", "on-secondary-fixed-variant": "#614000", "vermilion-deep": "#9C2E24", "error": "#ba1a1a", "on-error": "#ffffff", "surface-container-high": "#eae8e4", "on-tertiary-container": "#f6e1d7", "primary-container": "#b83a2e", "text-main": "#2A1F19", "outline": "#8c716d", "state-info": "#4A6E82", "primary-fixed-dim": "#ffb4a9", "gold-accent": "#D4A359", "tertiary": "#594b44", "state-warning": "#C5782A", "secondary": "#7e5713", "border-neutral": "#EBE4D8", "surface-container": "#efeeea", "on-surface-variant": "#59413e", "surface-container-low": "#f5f3ef", "on-secondary": "#ffffff", "bg-surface-elevated": "#FFFFFF", "secondary-fixed": "#ffddb1", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "border-accent": "#E6C587", "background": "#fbf9f5", "state-warning-bg": "#FCF5ED", "vermilion-primary": "#B83A2E", "surface-container-highest": "#e4e2de", "inverse-primary": "#ffb4a9", "inverse-surface": "#30312e", "secondary-fixed-dim": "#f2be71", "state-success-bg": "#EBF4EF", "bg-canvas": "#FDFBF7", "tertiary-fixed-dim": "#d6c3b9", "gold-light": "#F7EEDB", "text-subtle": "#9E8E84", "on-tertiary": "#ffffff", "state-info-bg": "#EDF4F7", "on-background": "#1b1c1a", "inverse-on-surface": "#f2f0ed", "surface-dim": "#dbdad6", "tertiary-container": "#73635b", "primary": "#962219", "bg-surface": "#F7F3EB", "secondary-container": "#fec97b", "on-tertiary-fixed": "#241913", "vermilion-soft": "#FDF1F0", "on-secondary-fixed": "#291800", "text-muted": "#6E5D53", "surface-variant": "#e4e2de", "primary-fixed": "#ffdad5", "tertiary-fixed": "#f3ded5", "state-success": "#3E7B54", "on-primary-fixed": "#410001", "surface": "#fbf9f5", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#52443d", "surface-bright": "#fbf9f5", "surface-tint": "#ad3227" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.75rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-2xl": "3rem", "gutter": "1rem", "space-xs": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin-tablet": "2rem", "margin-desktop": "2.5rem" }, "fontFamily": { "headline-lg-mobile": ["Merriweather"], "label-md": ["Be Vietnam Pro"], "headline-lg": ["Merriweather"], "label-sm": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "headline-md": ["Merriweather"], "body-lg": ["Be Vietnam Pro"], "title-md": ["Be Vietnam Pro"], "headline-xl-mobile": ["Merriweather"], "body-md": ["Be Vietnam Pro"], "title-lg": ["Be Vietnam Pro"], "lunar-date": ["Merriweather"], "headline-xl": ["Merriweather"] }, "fontSize": { "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["26px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "lunar-date": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-bg-canvas text-text-main font-body-md flex flex-col min-h-screen selection:bg-gold-light selection:text-vermilion-deep"><header class="fixed top-0 inset-x-0 z-50 bg-bg-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(42,31,25,0.04)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><img alt="Lịch Cúng Việt Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJgnEkrXoyCGasKfWkyzIBEhse66EawqK59advOOe9JvEK3Kw7ZwBbFqajSGjua-bvG4TeqOyMZfBEkGLwBT7AtIuCovSZ73gAeiroWtWwNAxYTdjwoeeIRYQT-4RvVb-oWfIrbIx_wCIEcT1djX5J1WGzAMY7UvyCTSLn7HFcUjdLg88F6Dgyaw6mR_i_U9XmMO65NagbpG50zMWlLZyJT8ZG6MJqqoXWDC0n5JM3po0F_l_4YiFg"/><div class="flex flex-col min-w-0"><span class="font-headline-md text-headline-md text-vermilion-primary truncate leading-tight tracking-tight">Lịch Cúng Việt</span><div class="flex items-center gap-1.5 mt-0.5"><span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-gold-light/60 text-secondary font-label-sm text-label-sm truncate max-w-[210px]"><span class="w-1.5 h-1.5 rounded-full bg-vermilion-primary mr-1 flex-shrink-0"></span>14 Tháng Giêng Giáp Thìn • 23/02/2024</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Mở hồ sơ cá nhân" class="w-11 h-11 flex items-center justify-center rounded-full active:scale-95 transition-transform"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-border-accent/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRX8fKDrQaYDpNt2yGy0cPkdjr_5EeQbviugnUyzqpqbDynAmT7X01i401hDTlM_2kGrp7ZloeWJbxDNXHBmXw0NXiE79pS--V5Dt6Q1cPUKKN2UaWSs9iqh-POqN26vqTQlvmb0XsX_dyhOt5g8yrn1cpiTF4j9Ekoe2QAzCriK9NkA-gu32l1RQdjggLIixQfjFeWTDX6iYl-tUmr4Z_0299N--YNlpflPLxBOSlEGr0sXHnAUTb"/></button></div></div></header><main class="flex flex-col flex-grow relative w-full pt-20 pb-28 bg-bg-canvas"><div class="flex flex-col w-full">
+<!-- Hero Banner with Warm Heritage Texture -->
+<section class="relative px-margin pt-space-xs pb-space-md">
+<div class="relative overflow-hidden rounded-xl bg-surface-container-low shadow-sm p-space-md flex flex-col gap-space-sm">
+<!-- Decorative Traditional Subtle Watermark Graphic -->
+<div class="absolute -right-8 -bottom-8 w-44 h-44 opacity-[0.06] pointer-events-none text-vermilion-primary">
+<svg fill="currentColor" viewbox="0 0 200 200">
+<circle cx="100" cy="100" fill="none" r="90" stroke="currentColor" stroke-width="6"></circle>
+<path d="M100 20 A80 80 0 0 1 100 180 A80 80 0 0 1 100 20 Z" fill="none" stroke="currentColor" stroke-width="3"></path>
+<circle cx="100" cy="60" r="16"></circle>
+<circle cx="100" cy="140" r="16"></circle>
+<circle cx="60" cy="100" r="16"></circle>
+<circle cx="140" cy="100" r="16"></circle>
+</svg>
+</div>
+<!-- Badge Label -->
+<div class="flex items-center gap-space-2xs">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-vermilion-soft text-vermilion-deep font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-vermilion-primary"></span>
+          Nếp Nhà An Yên
+        </span>
+</div>
+<!-- Main Slogan & Subtitle -->
+<div class="flex flex-col gap-1 min-w-0">
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-text-main tracking-tight leading-snug">
+          Chủ động chuẩn bị ngày lễ, giữ gìn nếp nhà
+        </h1>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed mt-0.5">
+          Trọn vẹn lòng hiếu kính gia tiên, thong dong thảnh thơi trong mỗi tuần tiết, lễ nghi cổ truyền dân tộc.
+        </p>
+</div>
+<!-- Action CTAs -->
+<div class="flex items-center gap-space-xs pt-space-2xs">
+<a class="flex-1 min-h-[44px] px-space-sm rounded-lg bg-vermilion-primary hover:bg-vermilion-deep text-on-primary font-title-md text-title-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all" data-path="lich-cung" href="#">
+<span class="material-symbols-outlined text-[20px]">calendar_month</span>
+<span>Xem lịch cúng</span>
+</a>
+<button class="flex-1 min-h-[44px] px-space-sm rounded-lg bg-bg-surface hover:bg-surface-container text-text-main font-title-md text-title-md flex items-center justify-center gap-1.5 shadow-sm active:scale-[0.98] transition-all" id="btn-create-plan" type="button">
+<span class="material-symbols-outlined text-[20px] text-gold-accent">post_add</span>
+<span>Tạo kế hoạch</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Quick Highlight Status Alert -->
+<section class="px-margin mb-space-md">
+<div class="p-space-sm rounded-xl bg-state-warning-bg flex items-center justify-between gap-space-xs shadow-sm">
+<div class="flex items-center gap-space-xs min-w-0">
+<div class="w-10 h-10 rounded-full bg-state-warning/15 flex items-center justify-center text-state-warning flex-shrink-0">
+<span class="material-symbols-outlined text-[22px]">notifications_active</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-state-warning font-semibold uppercase tracking-wider">Sắp diễn ra</span>
+<span class="w-1 h-1 rounded-full bg-state-warning"></span>
+<span class="font-label-sm text-label-sm text-state-warning font-bold">Còn 2 ngày</span>
+</div>
+<span class="font-title-md text-title-md text-text-main truncate">Rằm Tháng Giêng (Tết Nguyên Tiêu)</span>
+</div>
+</div>
+<a aria-label="Xem chi tiết chuẩn bị" class="flex-shrink-0 w-8 h-8 rounded-full bg-bg-surface-elevated text-secondary flex items-center justify-center hover:bg-gold-light active:scale-95 transition-transform" data-path="do-le" href="#">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</a>
+</div>
+</section>
+<!-- Ceremony Categories (Bento Grid Style) -->
+<section class="px-margin mb-space-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-title-lg text-title-lg text-text-main">Nhóm nghi lễ gia đình</h2>
+<span class="font-label-sm text-label-sm text-text-muted">5 nhóm nếp xưa</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs">
+<!-- Item 1: Gia Tiên (Span 2 for visual balance) -->
+<div class="col-span-2 p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex items-center justify-between gap-space-sm hover:bg-surface-container-low transition-colors cursor-pointer">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-11 h-11 rounded-lg bg-vermilion-soft text-vermilion-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">temple_hindu</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-md text-title-md text-text-main">Nghi Lễ Gia Tiên</span>
+<span class="font-body-sm text-body-sm text-text-muted truncate">Cúng giỗ, sóc vọng, thanh minh, gia trạch</span>
+</div>
+</div>
+<div class="flex items-center gap-1 text-secondary font-label-md text-label-md flex-shrink-0">
+<span>8 lễ</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</div>
+</div>
+<!-- Item 2: Mùng 1 & Ngày Rằm -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-xs hover:bg-surface-container-low transition-colors cursor-pointer min-h-[110px]">
+<div class="w-9 h-9 rounded-lg bg-gold-light text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">brightness_medium</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-main">Mùng 1 &amp; Rằm</span>
+<span class="font-body-sm text-body-sm text-text-muted">Định kỳ thường nhật</span>
+</div>
+<div class="font-label-sm text-label-sm text-text-subtle">
+          24 tuần/năm
+        </div>
+</div>
+<!-- Item 3: Ngày Giỗ Họ & Gia Đình -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-xs hover:bg-surface-container-low transition-colors cursor-pointer min-h-[110px]">
+<div class="w-9 h-9 rounded-lg bg-state-info-bg text-state-info flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">family_history</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-main">Giỗ Họ Gia Đình</span>
+<span class="font-body-sm text-body-sm text-text-muted">Nhớ ơn tiền nhân</span>
+</div>
+<div class="font-label-sm text-label-sm text-text-subtle">
+          4 ngày giỗ
+        </div>
+</div>
+<!-- Item 4: Chúng Sinh / Phóng Sinh -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-xs hover:bg-surface-container-low transition-colors cursor-pointer min-h-[110px]">
+<div class="w-9 h-9 rounded-lg bg-state-success-bg text-state-success flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">spa</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-main">Chúng Sinh &amp; Thiện</span>
+<span class="font-body-sm text-body-sm text-text-muted">Thí thực, từ bi</span>
+</div>
+<div class="font-label-sm text-label-sm text-text-subtle">
+          3 tuần tiết
+        </div>
+</div>
+<!-- Item 5: Lễ Hội & Truyền Thống -->
+<div class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between gap-space-xs hover:bg-surface-container-low transition-colors cursor-pointer min-h-[110px]">
+<div class="w-9 h-9 rounded-lg bg-vermilion-soft text-vermilion-deep flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">celebration</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-main">Lễ Tiết Năm Cũ Mới</span>
+<span class="font-body-sm text-body-sm text-text-muted">Hàn Thực, Táo Quân...</span>
+</div>
+<div class="font-label-sm text-label-sm text-text-subtle">
+          6 tết cổ truyền
+        </div>
+</div>
+</div>
+</section>
+<!-- Upcoming Ceremonies & Preparation Progress -->
+<section class="px-margin mb-space-lg flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<h2 class="font-title-lg text-title-lg text-text-main">Dịp lễ sắp tới &amp; Tiến độ</h2>
+</div>
+<a class="font-label-md text-label-md text-vermilion-primary hover:text-vermilion-deep flex items-center gap-0.5" data-path="lich-cung" href="#">
+        Xem tất cả
+        <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="flex flex-col gap-space-xs">
+<!-- Card 1: Tết Nguyên Tiêu (Active In-Progress) -->
+<article class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs transition-shadow hover:shadow-md">
+<!-- Card Top Bar: Lunar date & Verified Badge -->
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-vermilion-deep">Cúng Rằm Tháng Giêng</span>
+<span class="font-body-sm text-body-sm text-text-muted">Tết Nguyên Tiêu • Cầu an lành toàn gia</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-lunar-date text-lunar-date font-bold text-vermilion-primary">15/01 ÂL</span>
+<div class="font-label-sm text-label-sm text-text-subtle">24/02 Dương lịch</div>
+</div>
+</div>
+<!-- Verification & Status Tags -->
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-state-warning-bg text-state-warning font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">pending_actions</span>
+            Đang chuẩn bị (5/12 món)
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-state-success-bg text-state-success font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Đã xác minh ngày
+          </span>
+</div>
+<!-- Progress Bar (42%) -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-text-muted">Tiến độ sắm lễ</span>
+<span class="font-semibold text-vermilion-primary">42%</span>
+</div>
+<div class="w-full h-1.5 rounded-full bg-border-neutral overflow-hidden">
+<div class="h-full rounded-full bg-gradient-to-r from-gold-accent to-vermilion-primary" style="width: 42%;"></div>
+</div>
+</div>
+<!-- Card Action -->
+<div class="pt-space-2xs flex items-center justify-end">
+<a class="min-h-[40px] px-space-md rounded-lg bg-vermilion-soft hover:bg-vermilion-primary hover:text-on-primary text-vermilion-deep font-title-md text-title-md flex items-center gap-1.5 transition-colors" data-path="do-le" href="#">
+<span class="material-symbols-outlined text-[18px]">checklist</span>
+<span>Xem mâm cúng &amp; chuẩn bị</span>
+</a>
+</div>
+</article>
+<!-- Card 2: Ngày Giỗ Cụ Tổ Đệ Tam -->
+<article class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-text-main">Ngày Giỗ Cụ Tổ Đệ Tam</span>
+<span class="font-body-sm text-body-sm text-text-muted">Giỗ Họ • Lễ cúng chính nhật</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-lunar-date text-lunar-date font-bold text-text-main">20/01 ÂL</span>
+<div class="font-label-sm text-label-sm text-text-subtle">29/02 Dương lịch</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-surface-container text-text-muted font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">hourglass_empty</span>
+            Chưa chuẩn bị (0/8 món)
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-state-success-bg text-state-success font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Đã xác minh ngày
+          </span>
+</div>
+<div class="flex items-center justify-between pt-space-2xs text-text-muted">
+<span class="font-body-sm text-body-sm">Cần 1 mâm cỗ mặn &amp; 1 mâm hoa quả</span>
+<button class="text-secondary font-title-md text-title-md flex items-center gap-0.5 hover:text-vermilion-primary" type="button">
+            Lên danh sách
+            <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</button>
+</div>
+</article>
+<!-- Card 3: Mùng 1 Tháng Hai Âm Lịch -->
+<article class="p-space-sm rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs">
+<div class="flex items-start justify-between gap-space-xs">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-text-main">Mùng 1 Tháng Hai Âm Lịch</span>
+<span class="font-body-sm text-body-sm text-text-muted">Sóc nhật • Lễ dâng hương thường nhật</span>
+</div>
+<div class="text-right flex-shrink-0">
+<span class="font-lunar-date text-lunar-date font-bold text-text-main">01/02 ÂL</span>
+<div class="font-label-sm text-label-sm text-text-subtle">10/03 Dương lịch</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-state-info-bg text-state-info font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">event_available</span>
+            Đã lên lịch
+          </span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-state-success-bg text-state-success font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Đã xác minh ngày
+          </span>
+</div>
+</article>
+</div>
+</section>
+<!-- Traditional Wisdom & Customs Tips (Lời nhắc & Phong tục hay) -->
+<section class="px-margin mb-space-sm flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<h2 class="font-title-lg text-title-lg text-text-main">Lời nhắc &amp; Phong tục hay</h2>
+<span class="material-symbols-outlined text-gold-accent text-[22px]">lightbulb</span>
+</div>
+<!-- Heritage Wisdom Carousel/Cards -->
+<div class="flex flex-col gap-space-xs">
+<!-- Tip 1 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex gap-space-sm items-start">
+<div class="w-10 h-10 rounded-full bg-bg-surface-elevated text-gold-accent flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[22px]">nature_people</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="font-title-md text-title-md text-text-main">Thành tâm tại lòng, cốt ở thanh tịnh</span>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Lễ vật cốt yếu ở tấm lòng thành kính, mâm cúng trang nhã, đủ đầy tươi mới. Tuyệt đối không phô trương mâm cao cỗ đầy hay vung tay đốt nhiều vàng mã gây lãng phí.
+          </p>
+</div>
+</div>
+<!-- Tip 2 -->
+<div class="p-space-sm rounded-xl bg-surface-container-low flex gap-space-sm items-start">
+<div class="w-10 h-10 rounded-full bg-bg-surface-elevated text-state-info flex items-center justify-center flex-shrink-0 shadow-sm mt-0.5">
+<span class="material-symbols-outlined text-[22px]">local_florist</span>
+</div>
+<div class="flex flex-col gap-0.5 min-w-0">
+<span class="font-title-md text-title-md text-text-main">Mẹo chọn hoa tươi cúng rằm</span>
+<p class="font-body-sm text-body-sm text-text-muted leading-relaxed">
+            Ưu tiên các loài hoa thanh khiết mang sắc hương dịu mát như hoa cúc vàng, huệ ta, hoặc sen. Tránh dùng các loại hoa giả, hoa héo dâng lên bàn thờ gia tiên.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Modal Drawer for Quick Plan Creation -->
+<div aria-modal="true" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-end justify-center hidden" id="quick-plan-dialog" role="dialog">
+<div class="w-full max-w-lg bg-surface-container-lowest rounded-t-xl p-space-md shadow-xl flex flex-col gap-space-sm animate-slide-up">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-2xs">
+<span class="material-symbols-outlined text-vermilion-primary text-[22px]">edit_calendar</span>
+<span class="font-headline-md text-headline-md text-text-main">Tạo kế hoạch ngày cúng</span>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-text-muted hover:text-text-main" id="btn-close-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-text-muted">
+        Chọn dịp lễ gia đình để tự động tạo danh sách mua sắm đồ lễ chuẩn xác theo nếp xưa:
+      </p>
+<div class="flex flex-col gap-space-xs pt-space-2xs">
+<button class="p-space-sm rounded-lg bg-surface-container-low hover:bg-gold-light/40 flex items-center justify-between text-left transition-colors" type="button">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-main">Lễ cúng Gia Tiên định kỳ</span>
+<span class="font-body-sm text-body-sm text-text-muted">Sóc vọng mùng một, ngày rằm tháng Giêng</span>
+</div>
+<span class="material-symbols-outlined text-secondary">arrow_forward_ios</span>
+</button>
+<button class="p-space-sm rounded-lg bg-surface-container-low hover:bg-gold-light/40 flex items-center justify-between text-left transition-colors" type="button">
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-text-main">Lễ Giỗ gia đình / Dòng tộc</span>
+<span class="font-body-sm text-body-sm text-text-muted">Nhập tên bậc tiền nhân &amp; mâm cỗ mong muốn</span>
+</div>
+<span class="material-symbols-outlined text-secondary">arrow_forward_ios</span>
+</button>
+</div>
+<div class="pt-space-xs flex justify-end">
+<button class="min-h-[44px] px-space-md rounded-lg bg-surface-container text-text-main font-title-md text-title-md hover:bg-surface-container-high transition-colors" id="btn-close-modal-secondary" type="button">
+          Đóng
+        </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interaction for plan drawer
+  (function() {
+    const openBtn = document.getElementById('btn-create-plan');
+    const modal = document.getElementById('quick-plan-dialog');
+    const closeBtn = document.getElementById('btn-close-modal');
+    const closeBtnSec = document.getElementById('btn-close-modal-secondary');
+
+    if (openBtn && modal) {
+      openBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        modal.classList.remove('hidden');
+      });
+    }
+
+    function closeModal() {
+      if (modal) {
+        modal.classList.add('hidden');
+      }
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeBtnSec) closeBtnSec.addEventListener('click', closeModal);
+
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+    }
+  })();
+</script><footer class="mt-space-2xl px-margin pt-space-lg pb-space-xl bg-bg-surface/50 rounded-t-xl text-center"><div class="max-w-md mx-auto flex flex-col items-center gap-space-xs"><span class="font-headline-md text-headline-md text-vermilion-deep">Gìn Giữ Nếp Nhà</span><p class="font-body-sm text-body-sm text-text-muted leading-relaxed max-w-xs">Chu toàn nếp lễ gia tiên, trang trọng và thanh tâm trong từng tuần tiết cổ truyền dân tộc.</p><div class="flex items-center justify-center gap-space-md py-space-xs font-label-md text-label-md text-secondary"><a class="hover:text-vermilion-primary transition-colors" data-path="gioi-thieu" href="#">Giới thiệu</a><span class="text-border-neutral">•</span><a class="hover:text-vermilion-primary transition-colors" data-path="dieu-khoan" href="#">Điều khoản</a><span class="text-border-neutral">•</span><a class="hover:text-vermilion-primary transition-colors" data-path="lien-he" href="#">Liên hệ</a></div><p class="font-label-sm text-label-sm text-text-subtle italic px-space-xs">* Thông tin phong tục, văn khấn mang tính tham khảo và gìn giữ nét đẹp truyền thống gia đình.</p></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-bg-canvas/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(42,31,25,0.06)]" data-active-classes="text-vermilion-primary font-bold"><div class="flex justify-around items-center h-16 px-space-2xs"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors text-vermilion-primary font-bold" data-path="trang-chu" href="#"><span class="material-symbols-outlined text-[24px]">temple_buddhist</span><span class="font-label-sm text-label-sm mt-0.5">Trang chủ</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-text-muted hover:text-text-main transition-colors" data-path="lich-cung" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm mt-0.5">Lịch cúng</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-text-muted hover:text-text-main transition-colors" data-path="do-le" href="#"><span class="material-symbols-outlined text-[24px]">checklist_rtl</span><span class="font-label-sm text-label-sm mt-0.5">Đồ lễ</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-text-muted hover:text-text-main transition-colors" data-path="huong-dan" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">Hướng dẫn</span></a></div></nav></body></html>

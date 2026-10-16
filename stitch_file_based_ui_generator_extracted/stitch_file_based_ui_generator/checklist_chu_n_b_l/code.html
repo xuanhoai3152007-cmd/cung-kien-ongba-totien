@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#fbf9f5;}body{overscroll-behavior:none;-webkit-tap-highlight-color:transparent;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Merriweather:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "outline-variant": "#e0bfba", "on-secondary-container": "#78520e", "on-surface": "#1b1c1a", "error-container": "#ffdad6", "on-primary-container": "#ffdeda", "on-primary-fixed-variant": "#8b1912", "on-secondary-fixed-variant": "#614000", "vermilion-deep": "#9C2E24", "error": "#ba1a1a", "on-error": "#ffffff", "surface-container-high": "#eae8e4", "on-tertiary-container": "#f6e1d7", "primary-container": "#b83a2e", "text-main": "#2A1F19", "outline": "#8c716d", "state-info": "#4A6E82", "primary-fixed-dim": "#ffb4a9", "gold-accent": "#D4A359", "tertiary": "#594b44", "state-warning": "#C5782A", "secondary": "#7e5713", "border-neutral": "#EBE4D8", "surface-container": "#efeeea", "on-surface-variant": "#59413e", "surface-container-low": "#f5f3ef", "on-secondary": "#ffffff", "bg-surface-elevated": "#FFFFFF", "secondary-fixed": "#ffddb1", "surface-container-lowest": "#ffffff", "on-primary": "#ffffff", "border-accent": "#E6C587", "background": "#fbf9f5", "state-warning-bg": "#FCF5ED", "vermilion-primary": "#B83A2E", "surface-container-highest": "#e4e2de", "inverse-primary": "#ffb4a9", "inverse-surface": "#30312e", "secondary-fixed-dim": "#f2be71", "state-success-bg": "#EBF4EF", "bg-canvas": "#FDFBF7", "tertiary-fixed-dim": "#d6c3b9", "gold-light": "#F7EEDB", "text-subtle": "#9E8E84", "on-tertiary": "#ffffff", "state-info-bg": "#EDF4F7", "on-background": "#1b1c1a", "inverse-on-surface": "#f2f0ed", "surface-dim": "#dbdad6", "tertiary-container": "#73635b", "primary": "#962219", "bg-surface": "#F7F3EB", "secondary-container": "#fec97b", "on-tertiary-fixed": "#241913", "vermilion-soft": "#FDF1F0", "on-secondary-fixed": "#291800", "text-muted": "#6E5D53", "surface-variant": "#e4e2de", "primary-fixed": "#ffdad5", "tertiary-fixed": "#f3ded5", "state-success": "#3E7B54", "on-primary-fixed": "#410001", "surface": "#fbf9f5", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#52443d", "surface-bright": "#fbf9f5", "surface-tint": "#ad3227" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "space-sm": "0.75rem", "space-2xs": "0.25rem", "space-lg": "1.5rem", "gutter-desktop": "1.5rem", "margin": "1rem", "space-2xl": "3rem", "gutter": "1rem", "space-xs": "0.5rem", "space-md": "1rem", "space-xl": "2rem", "margin-tablet": "2rem", "margin-desktop": "2.5rem" }, "fontFamily": { "headline-lg-mobile": ["Merriweather"], "label-md": ["Be Vietnam Pro"], "headline-lg": ["Merriweather"], "label-sm": ["Be Vietnam Pro"], "body-sm": ["Be Vietnam Pro"], "headline-md": ["Merriweather"], "body-lg": ["Be Vietnam Pro"], "title-md": ["Be Vietnam Pro"], "headline-xl-mobile": ["Merriweather"], "body-md": ["Be Vietnam Pro"], "title-lg": ["Be Vietnam Pro"], "lunar-date": ["Merriweather"], "headline-xl": ["Merriweather"] }, "fontSize": { "headline-lg-mobile": ["22px", { "lineHeight": "30px", "fontWeight": "700" }], "label-md": ["13px", { "lineHeight": "18px", "letterSpacing": "0.01em", "fontWeight": "600" }], "headline-lg": ["26px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-sm": ["11px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "500" }], "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }], "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "headline-xl-mobile": ["28px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "lunar-date": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-xl": ["36px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }] } } } };</script></head><body class="bg-bg-canvas text-text-main font-body-md flex flex-col min-h-screen selection:bg-gold-light selection:text-vermilion-deep"><header class="fixed top-0 inset-x-0 z-50 bg-bg-canvas/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(42,31,25,0.04)] pt-safe"><div class="h-20 px-margin flex items-center justify-between gap-space-xs"><div class="flex items-center gap-space-xs min-w-0"><img alt="Lịch Cúng Việt Logo" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJgnEkrXoyCGasKfWkyzIBEhse66EawqK59advOOe9JvEK3Kw7ZwBbFqajSGjua-bvG4TeqOyMZfBEkGLwBT7AtIuCovSZ73gAeiroWtWwNAxYTdjwoeeIRYQT-4RvVb-oWfIrbIx_wCIEcT1djX5J1WGzAMY7UvyCTSLn7HFcUjdLg88F6Dgyaw6mR_i_U9XmMO65NagbpG50zMWlLZyJT8ZG6MJqqoXWDC0n5JM3po0F_l_4YiFg"/><div class="flex flex-col min-w-0"><span class="font-headline-md text-headline-md text-vermilion-primary truncate leading-tight tracking-tight">Lịch Cúng Việt</span><div class="flex items-center gap-1.5 mt-0.5"><span class="inline-flex items-center px-1.5 py-0.5 rounded-full bg-gold-light/60 text-secondary font-label-sm text-label-sm truncate max-w-[210px]"><span class="w-1.5 h-1.5 rounded-full bg-vermilion-primary mr-1 flex-shrink-0"></span>14 Tháng Giêng Giáp Thìn • 23/02/2024</span></div></div></div><div class="flex items-center gap-space-xs flex-shrink-0"><button aria-label="Mở hồ sơ cá nhân" class="w-11 h-11 flex items-center justify-center rounded-full active:scale-95 transition-transform"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-border-accent/40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRX8fKDrQaYDpNt2yGy0cPkdjr_5EeQbviugnUyzqpqbDynAmT7X01i401hDTlM_2kGrp7ZloeWJbxDNXHBmXw0NXiE79pS--V5Dt6Q1cPUKKN2UaWSs9iqh-POqN26vqTQlvmb0XsX_dyhOt5g8yrn1cpiTF4j9Ekoe2QAzCriK9NkA-gu32l1RQdjggLIixQfjFeWTDX6iYl-tUmr4Z_0299N--YNlpflPLxBOSlEGr0sXHnAUTb"/></button></div></div></header><main class="flex flex-col flex-grow relative w-full pt-20 pb-28 bg-bg-canvas"><div class="flex flex-col w-full px-margin pb-6 gap-space-md">
+<!-- Header Card: Nghi thức & Tiến độ -->
+<section class="bg-surface-container-lowest rounded-xl p-space-md shadow-sm relative overflow-hidden">
+<div class="flex items-start justify-between gap-space-xs relative z-10">
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 mb-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-gold-light text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px] mr-1 text-vermilion-primary">verified</span>
+            Tiết Thượng Nguyên
+          </span>
+<span class="text-text-subtle font-label-sm text-label-sm">15 Tháng Giêng Giáp Thìn</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-text-main font-bold tracking-tight">
+          Chuẩn bị lễ vật: Rằm Tháng Giêng
+        </h1>
+<p class="font-body-sm text-body-sm text-text-muted mt-1">
+          Danh mục sắm lễ dâng ban thờ Gia Tiên và Thần Linh chu toàn, ấm cúng.
+        </p>
+</div>
+<div class="flex-shrink-0 w-12 h-12 rounded-lg bg-vermilion-soft flex items-center justify-center text-vermilion-primary">
+<span class="material-symbols-outlined text-[28px]">format_list_bulleted_add</span>
+</div>
+</div>
+<!-- Thanh tiến độ sinh động -->
+<div class="mt-space-md pt-space-xs relative z-10">
+<div class="flex items-center justify-between mb-1.5">
+<div class="flex items-center gap-1.5 font-label-md text-label-md text-text-main">
+<span class="material-symbols-outlined text-state-warning text-[18px]">timelapse</span>
+<span>Đã chuẩn bị <strong class="text-vermilion-primary font-bold" id="progress-text">7 / 12</strong> vật phẩm</span>
+</div>
+<span class="font-label-md text-label-md font-bold text-vermilion-deep" id="progress-percent">58%</span>
+</div>
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden p-0.5 flex items-center">
+<div class="h-full rounded-full bg-gradient-to-r from-gold-accent via-state-warning to-vermilion-primary transition-all duration-500 ease-out" id="progress-bar" style="width: 58%;"></div>
+</div>
+</div>
+<!-- Họa tiết góc nhã nhặn -->
+<div class="absolute -right-8 -bottom-8 w-28 h-28 rounded-full bg-gold-light/40 pointer-events-none blur-xl"></div>
+</section>
+<!-- Bộ lọc danh mục & Trạng thái -->
+<section class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-text-muted uppercase tracking-wider">Lọc trạng thái</span>
+<span class="font-body-sm text-body-sm text-text-subtle italic">Chạm để đánh dấu đã mua</span>
+</div>
+<div class="flex items-center gap-space-xs overflow-x-auto no-scrollbar py-0.5" id="filter-tabs">
+<button class="filter-btn active flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-vermilion-soft text-vermilion-deep font-label-md text-label-md shadow-sm transition-all flex-shrink-0" onclick="setFilter('all', this)">
+<span class="material-symbols-outlined text-[16px]">all_inbox</span>
+<span>Tất cả</span>
+<span class="px-1.5 py-0.2 rounded-full bg-vermilion-primary text-on-primary text-[11px] font-bold" id="count-all">12</span>
+</button>
+<button class="filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-text-muted hover:text-text-main font-label-md text-label-md transition-all flex-shrink-0" onclick="setFilter('pending', this)">
+<span class="material-symbols-outlined text-[16px]">radio_button_unchecked</span>
+<span>Chưa chuẩn bị</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-text-main text-[11px] font-bold" id="count-pending">5</span>
+</button>
+<button class="filter-btn flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-text-muted hover:text-text-main font-label-md text-label-md transition-all flex-shrink-0" onclick="setFilter('completed', this)">
+<span class="material-symbols-outlined text-[16px] text-state-success">check_circle</span>
+<span>Đã mua / xong</span>
+<span class="px-1.5 py-0.2 rounded-full bg-surface-container-high text-text-main text-[11px] font-bold" id="count-completed">7</span>
+</button>
+</div>
+</section>
+<!-- Nhóm 1: Lễ Hương Hoa & Nước Thờ -->
+<section class="checklist-group flex flex-col gap-space-xs" data-group="huong-hoa">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-4 rounded-full bg-gold-accent"></div>
+<h2 class="font-title-lg text-title-lg text-text-main font-bold">1. Lễ Hương Hoa &amp; Nước Thờ</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted bg-surface-container-high px-2 py-0.5 rounded-full">5 món</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Item 1.1: Hương trầm sạch (Đã hoàn thành) -->
+<div class="checklist-item completed flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="1" data-status="completed">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-subtle line-through truncate font-medium">Hương trầm sạch thảo mộc</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium">1 hộp</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+<span class="item-note truncate">Đã mua tại tiệm quen phố cổ</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 1.2: Hoa cúc đại đóa (Đã hoàn thành) -->
+<div class="checklist-item completed flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="2" data-status="completed">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-subtle line-through truncate font-medium">Hoa cúc đại đóa vàng tươi</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium">10 cành</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">local_shipping</span>
+<span class="item-note truncate">Đặt chợ sớm mai 5h sáng nhận</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 1.3: Trầu cau tươi (Chưa chuẩn bị) -->
+<div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="3" data-status="pending">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-main truncate font-medium">Trầu cau tươi têm cánh phượng</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">1 đĩa</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-state-warning font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">priority_high</span>
+<span class="item-note truncate">Chọn buồng cau xanh vỏ, quả đều khum</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 1.4: Đèn cầy / Nến đỏ (Đã hoàn thành) -->
+<div class="checklist-item completed flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="4" data-status="completed">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-subtle line-through truncate font-medium">Đèn cầy / Nến bơ đỏ cúng lễ</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium">1 cặp</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">inventory_2</span>
+<span class="item-note truncate">Đã có sẵn trong tủ lễ gia đình</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 1.5: Rượu nếp trắng & Nước (Chưa chuẩn bị) -->
+<div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="5" data-status="pending">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-main truncate font-medium">Rượu nếp cái hoa vàng &amp; Nước sạch</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">1 chai 500ml</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">info</span>
+<span class="item-note truncate">Rót vào 3 chén ngự trên kỷ ngai</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Nhóm 2: Lễ Mặn Gia Tiên -->
+<section class="checklist-group flex flex-col gap-space-xs" data-group="le-man">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-4 rounded-full bg-vermilion-primary"></div>
+<h2 class="font-title-lg text-title-lg text-text-main font-bold">2. Lễ Mặn Gia Tiên Cổ Truyền</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted bg-surface-container-high px-2 py-0.5 rounded-full">5 món</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Item 2.1: Gà ta cánh tiên (Chưa chuẩn bị) -->
+<div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="6" data-status="pending">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-main truncate font-medium">Gà trống thiến luộc ngậm hoa hồng</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">1 con (~1.8kg)</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-state-warning font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">alarm</span>
+<span class="item-note truncate">Đặt giao 8h30 sáng rằm, buộc cánh tiên đẹp</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 2.2: Xôi gấc hạt sen (Đã hoàn thành) -->
+<div class="checklist-item completed flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="7" data-status="completed">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-subtle line-through truncate font-medium">Xôi gấc đỏ son đồ hạt sen</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium">1 đĩa lớn</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">rice_bowl</span>
+<span class="item-note truncate">Đã ngâm gạo nếp cái hoa vàng với thịt gấc</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 2.3: Canh bóng thập cẩm (Chưa chuẩn bị) -->
+<div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="8" data-status="pending">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-main truncate font-medium">Canh bóng thập cẩm ngũ sắc</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">1 bát tô lớn</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">soup_kitchen</span>
+<span class="item-note truncate">Chuẩn bị bóng bì, nấm hương, súp lơ, tôm khô</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 2.4: Giò lụa truyền thống (Đã hoàn thành) -->
+<div class="checklist-item completed flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="9" data-status="completed">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-subtle line-through truncate font-medium">Giò lụa Ước Lễ thái hoa 6 cánh</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium">1 khoanh</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">task_alt</span>
+<span class="item-note truncate">Đã mua sẵn giò mới nóng hổi cất ngăn mát</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 2.5: Nem rán giòn (Chưa chuẩn bị) -->
+<div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="10" data-status="pending">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-main truncate font-medium">Nem rán vàng giòn cổ truyền</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">1 đĩa 10 cái</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">schedule</span>
+<span class="item-note truncate">Gói sẵn tối 14, sáng sớm rằm rán nóng dâng lễ</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Nhóm 3: Hoa Quả & Đồ Dâng Thờ -->
+<section class="checklist-group flex flex-col gap-space-xs" data-group="hoa-qua">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<div class="w-2 h-4 rounded-full bg-state-warning"></div>
+<h2 class="font-title-lg text-title-lg text-text-main font-bold">3. Hoa Quả &amp; Đồ Dâng Thờ</h2>
+</div>
+<span class="font-label-sm text-label-sm text-text-muted bg-surface-container-high px-2 py-0.5 rounded-full">2 món</span>
+</div>
+<div class="flex flex-col gap-2">
+<!-- Item 3.1: Mâm ngũ quả (Đã hoàn thành) -->
+<div class="checklist-item completed flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="11" data-status="completed">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-subtle line-through truncate font-medium">Mâm ngũ quả ngũ hành sung túc</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium">1 mâm</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-subtle font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">nutrition</span>
+<span class="item-note truncate">Chuối tiêu xanh, bưởi vàng, thanh long, táo đỏ, quýt ngọt</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+<!-- Item 3.2: Tiền vàng mã tinh giản (Chưa chuẩn bị) -->
+<div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-id="12" data-status="pending">
+<button aria-label="Đánh dấu trạng thái" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" onclick="toggleItem(this)">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<div class="flex flex-col flex-grow min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<span class="item-name font-title-md text-title-md text-text-main truncate font-medium">Tiền vàng mã truyền thống</span>
+<span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">1 phần nhỏ</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1 text-text-muted font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[14px]">eco</span>
+<span class="item-note truncate">Thực hiện nếp sống văn minh, tinh giản, trang nghiêm</span>
+</div>
+</div>
+<div class="flex items-center gap-1 flex-shrink-0">
+<button aria-label="Chỉnh sửa" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" onclick="editNote(this)">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+</button>
+<button aria-label="Xóa" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" onclick="deleteItem(this)">
+<span class="material-symbols-outlined text-[18px]">delete_outline</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Ghi chú văn hóa & phong tục -->
+<section class="mt-2 p-space-md rounded-xl bg-gold-light/40 flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5">auto_stories</span>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-secondary font-bold">Lời dặn gia phong</span>
+<p class="font-body-sm text-body-sm text-text-muted mt-0.5 leading-relaxed">
+        “Lễ vật cốt ở sự tinh sạch, trang nghiêm và thành tâm. Tuỳ điều kiện hoàn cảnh gia đình mà sắm sửa mâm cỗ giản tiện, quan trọng nhất là con cháu sum vầy kính nhớ tổ tiên.”
+      </p>
+</div>
+</section>
+<!-- Nút hành động nhanh -->
+<section class="flex flex-col gap-2.5 pt-2">
+<button class="w-full h-12 rounded-lg bg-vermilion-primary hover:bg-vermilion-deep active:scale-[0.99] text-on-primary font-title-md text-title-md font-semibold flex items-center justify-center gap-2 shadow-md transition-all" onclick="openAddModal()">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Thêm vật phẩm mới</span>
+</button>
+<div class="grid grid-cols-2 gap-2.5">
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-text-main font-label-md text-label-md font-medium flex items-center justify-center gap-1.5 transition-colors" onclick="shareShoppingList()">
+<span class="material-symbols-outlined text-[18px] text-vermilion-primary">share</span>
+<span>Chia sẻ người nhà</span>
+</button>
+<button class="h-11 rounded-lg bg-surface-container hover:bg-surface-container-high text-text-main font-label-md text-label-md font-medium flex items-center justify-center gap-1.5 transition-colors" onclick="printShoppingList()">
+<span class="material-symbols-outlined text-[18px] text-secondary">print</span>
+<span>In danh sách đi chợ</span>
+</button>
+</div>
+</section>
+<!-- Modal / Bottom Sheet Thêm vật phẩm mới (Ẩn mặc định) -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex items-end justify-center" id="add-modal">
+<div class="w-full max-w-md bg-surface-container-lowest rounded-t-2xl p-space-md shadow-2xl flex flex-col gap-space-sm transform transition-transform">
+<div class="w-12 h-1.5 bg-surface-container-highest rounded-full mx-auto mb-1"></div>
+<div class="flex items-center justify-between pb-1">
+<h3 class="font-title-lg text-title-lg font-bold text-text-main">Thêm đồ lễ mới</h3>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-text-muted hover:bg-surface-container" onclick="closeAddModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-3">
+<div>
+<label class="block font-label-md text-label-md text-text-main mb-1">Tên lễ vật</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-low text-text-main placeholder:text-text-subtle font-body-md text-body-md outline-none focus:bg-surface-container-lowest transition-colors" id="new-item-name" placeholder="Ví dụ: Bánh chưng gấc, Chè kho..." type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<div>
+<label class="block font-label-md text-label-md text-text-main mb-1">Số lượng &amp; Đơn vị</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-low text-text-main placeholder:text-text-subtle font-body-md text-body-md outline-none focus:bg-surface-container-lowest transition-colors" id="new-item-qty" placeholder="1 đĩa, 2 cặp..." type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-main mb-1">Phân nhóm</label>
+<select class="w-full h-11 px-3 rounded-lg bg-surface-container-low text-text-main font-body-md text-body-md outline-none focus:bg-surface-container-lowest transition-colors" id="new-item-group">
+<option value="huong-hoa">1. Lễ Hương Hoa</option>
+<option selected="" value="le-man">2. Lễ Mặn Gia Tiên</option>
+<option value="hoa-qua">3. Hoa Quả &amp; Khác</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-text-main mb-1">Ghi chú sắm lễ</label>
+<input class="w-full h-11 px-3 rounded-lg bg-surface-container-low text-text-main placeholder:text-text-subtle font-body-md text-body-md outline-none focus:bg-surface-container-lowest transition-colors" id="new-item-note" placeholder="Nơi mua, thời gian giao hàng..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-2 mt-2 pt-2">
+<button class="flex-1 h-11 rounded-lg bg-surface-container text-text-muted font-label-md text-label-md font-semibold" onclick="closeAddModal()">Hủy</button>
+<button class="flex-1 h-11 rounded-lg bg-vermilion-primary text-on-primary font-label-md text-label-md font-semibold shadow-sm" onclick="submitNewItem()">Lưu vật phẩm</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let currentFilter = 'all';
+
+  function updateProgress() {
+    const totalItems = document.querySelectorAll('.checklist-item').length;
+    const completedItems = document.querySelectorAll('.checklist-item.completed').length;
+    const pendingItems = totalItems - completedItems;
+    const percent = totalItems > 0 ? Math.round((completedItems / totalItems) * 100) : 0;
+
+    const countAllEl = document.getElementById('count-all');
+    const countPendingEl = document.getElementById('count-pending');
+    const countCompletedEl = document.getElementById('count-completed');
+    const progressTextEl = document.getElementById('progress-text');
+    const progressPercentEl = document.getElementById('progress-percent');
+    const progressBarEl = document.getElementById('progress-bar');
+
+    if (countAllEl) countAllEl.innerText = totalItems;
+    if (countPendingEl) countPendingEl.innerText = pendingItems;
+    if (countCompletedEl) countCompletedEl.innerText = completedItems;
+
+    if (progressTextEl) progressTextEl.innerText = completedItems + ' / ' + totalItems;
+    if (progressPercentEl) progressPercentEl.innerText = percent + '%';
+    if (progressBarEl) progressBarEl.style.width = percent + '%';
+  }
+
+  function toggleItem(btn) {
+    const item = btn.closest('.checklist-item');
+    if (!item) return;
+
+    const isCompleted = item.classList.contains('completed');
+    const nameEl = item.querySelector('.item-name');
+    const qtyEl = item.querySelector('.item-qty');
+
+    if (isCompleted) {
+      item.classList.remove('completed');
+      item.classList.add('pending');
+      item.setAttribute('data-status', 'pending');
+      btn.className = 'mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90';
+      if (nameEl) {
+        nameEl.classList.remove('line-through', 'text-text-subtle');
+        nameEl.classList.add('text-text-main');
+      }
+      if (qtyEl) {
+        qtyEl.className = 'item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium';
+      }
+    } else {
+      item.classList.remove('pending');
+      item.classList.add('completed');
+      item.setAttribute('data-status', 'completed');
+      btn.className = 'mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-state-success text-on-primary flex items-center justify-center transition-transform active:scale-90';
+      if (nameEl) {
+        nameEl.classList.add('line-through', 'text-text-subtle');
+        nameEl.classList.remove('text-text-main');
+      }
+      if (qtyEl) {
+        qtyEl.className = 'item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-text-muted font-medium';
+      }
+    }
+
+    applyCurrentFilter();
+    updateProgress();
+  }
+
+  function setFilter(filterType, btn) {
+    currentFilter = filterType;
+    const buttons = document.querySelectorAll('.filter-btn');
+    buttons.forEach(b => {
+      b.classList.remove('active', 'bg-vermilion-soft', 'text-vermilion-deep', 'shadow-sm');
+      b.classList.add('bg-surface-container', 'text-text-muted');
+    });
+
+    btn.classList.add('active', 'bg-vermilion-soft', 'text-vermilion-deep', 'shadow-sm');
+    btn.classList.remove('bg-surface-container', 'text-text-muted');
+
+    applyCurrentFilter();
+  }
+
+  function applyCurrentFilter() {
+    const items = document.querySelectorAll('.checklist-item');
+    items.forEach(item => {
+      const status = item.getAttribute('data-status');
+      if (currentFilter === 'all') {
+        item.style.display = 'flex';
+      } else if (currentFilter === 'completed' && status === 'completed') {
+        item.style.display = 'flex';
+      } else if (currentFilter === 'pending' && status === 'pending') {
+        item.style.display = 'flex';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+
+  function deleteItem(btn) {
+    const item = btn.closest('.checklist-item');
+    if (!item) return;
+    if (confirm('Bạn có chắc muốn xóa vật phẩm này khỏi danh sách chuẩn bị?')) {
+      item.remove();
+      updateProgress();
+    }
+  }
+
+  function editNote(btn) {
+    const item = btn.closest('.checklist-item');
+    const noteEl = item.querySelector('.item-note');
+    if (!noteEl) return;
+    const currentNote = noteEl.innerText;
+    const newNote = prompt('Chỉnh sửa ghi chú cho vật phẩm này:', currentNote);
+    if (newNote !== null && newNote.trim() !== '') {
+      noteEl.innerText = newNote.trim();
+    }
+  }
+
+  function openAddModal() {
+    const modal = document.getElementById('add-modal');
+    if (modal) modal.classList.remove('hidden');
+  }
+
+  function closeAddModal() {
+    const modal = document.getElementById('add-modal');
+    if (modal) modal.classList.add('hidden');
+    document.getElementById('new-item-name').value = '';
+    document.getElementById('new-item-qty').value = '';
+    document.getElementById('new-item-note').value = '';
+  }
+
+  function submitNewItem() {
+    const name = document.getElementById('new-item-name').value.trim();
+    const qty = document.getElementById('new-item-qty').value.trim() || '1 phần';
+    const groupVal = document.getElementById('new-item-group').value;
+    const note = document.getElementById('new-item-note').value.trim() || 'Cần mua sớm';
+
+    if (!name) {
+      alert('Vui lòng nhập tên lễ vật.');
+      return;
+    }
+
+    const groupEl = document.querySelector(`.checklist-group[data-group="${groupVal}"] .flex-col`);
+    if (!groupEl) return;
+
+    const newItemHtml = `
+      <div class="checklist-item pending flex items-start gap-space-sm p-space-sm rounded-lg bg-surface-container-lowest shadow-sm transition-all" data-status="pending">
+        <button onclick="toggleItem(this)" class="mt-0.5 flex-shrink-0 w-6 h-6 rounded bg-surface-container text-transparent flex items-center justify-center transition-transform active:scale-90" aria-label="Đánh dấu trạng thái">
+          <span class="material-symbols-outlined text-[18px]">check</span>
+        </button>
+        <div class="flex flex-col flex-grow min-w-0">
+          <div class="flex items-baseline justify-between gap-2">
+            <span class="item-name font-title-md text-title-md text-text-main truncate font-medium">${name}</span>
+            <span class="item-qty flex-shrink-0 font-label-sm text-label-sm px-2 py-0.5 rounded bg-gold-light text-secondary font-medium">${qty}</span>
+          </div>
+          <div class="flex items-center gap-1.5 mt-1 text-text-muted font-body-sm text-body-sm">
+            <span class="material-symbols-outlined text-[14px]">edit_note</span>
+            <span class="item-note truncate">${note}</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-1 flex-shrink-0">
+          <button onclick="editNote(this)" class="p-1 text-text-subtle hover:text-secondary active:scale-95 transition-colors" aria-label="Chỉnh sửa">
+            <span class="material-symbols-outlined text-[18px]">edit_note</span>
+          </button>
+          <button onclick="deleteItem(this)" class="p-1 text-text-subtle hover:text-error active:scale-95 transition-colors" aria-label="Xóa">
+            <span class="material-symbols-outlined text-[18px]">delete_outline</span>
+          </button>
+        </div>
+      </div>
+    `;
+
+    groupEl.insertAdjacentHTML('beforeend', newItemHtml);
+    closeAddModal();
+    updateProgress();
+    applyCurrentFilter();
+  }
+
+  function shareShoppingList() {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Checklist đồ lễ Rằm Tháng Giêng',
+        text: 'Danh mục sắm lễ gia tiên ngày Rằm Tháng Giêng Giáp Thìn - Lịch Cúng Việt.',
+        url: window.location.href,
+      }).catch(() => {});
+    } else {
+      alert('Đã sao chép liên kết danh mục lễ vật vào bộ nhớ tạm để gửi cho người thân!');
+    }
+  }
+
+  function printShoppingList() {
+    window.print();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    updateProgress();
+  });
+</script><footer class="mt-space-2xl px-margin pt-space-lg pb-space-xl bg-bg-surface/50 rounded-t-xl text-center"><div class="max-w-md mx-auto flex flex-col items-center gap-space-xs"><span class="font-headline-md text-headline-md text-vermilion-deep">Gìn Giữ Nếp Nhà</span><p class="font-body-sm text-body-sm text-text-muted leading-relaxed max-w-xs">Chu toàn nếp lễ gia tiên, trang trọng và thanh tâm trong từng tuần tiết cổ truyền dân tộc.</p><div class="flex items-center justify-center gap-space-md py-space-xs font-label-md text-label-md text-secondary"><a class="hover:text-vermilion-primary transition-colors" data-path="gioi-thieu" href="#">Giới thiệu</a><span class="text-border-neutral">•</span><a class="hover:text-vermilion-primary transition-colors" data-path="dieu-khoan" href="#">Điều khoản</a><span class="text-border-neutral">•</span><a class="hover:text-vermilion-primary transition-colors" data-path="lien-he" href="#">Liên hệ</a></div><p class="font-label-sm text-label-sm text-text-subtle italic px-space-xs">* Thông tin phong tục, văn khấn mang tính tham khảo và gìn giữ nét đẹp truyền thống gia đình.</p></div></footer></main><nav class="fixed bottom-0 inset-x-0 z-50 pb-safe bg-bg-canvas/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(42,31,25,0.06)]" data-active-classes="text-vermilion-primary font-bold"><div class="flex justify-around items-center h-16 px-space-2xs"><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-text-muted hover:text-text-main transition-colors" data-path="trang-chu" href="#"><span class="material-symbols-outlined text-[24px]">temple_buddhist</span><span class="font-label-sm text-label-sm mt-0.5">Trang chủ</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-text-muted hover:text-text-main transition-colors" data-path="lich-cung" href="#"><span class="material-symbols-outlined text-[24px]">calendar_month</span><span class="font-label-sm text-label-sm mt-0.5">Lịch cúng</span></a><a aria-current="page" class="flex flex-col items-center justify-center min-w-[64px] h-12 transition-colors text-vermilion-primary font-bold" data-path="do-le" href="#"><span class="material-symbols-outlined text-[24px]">checklist_rtl</span><span class="font-label-sm text-label-sm mt-0.5">Đồ lễ</span></a><a class="flex flex-col items-center justify-center min-w-[64px] h-12 text-text-muted hover:text-text-main transition-colors" data-path="huong-dan" href="#"><span class="material-symbols-outlined text-[24px]">menu_book</span><span class="font-label-sm text-label-sm mt-0.5">Hướng dẫn</span></a></div></nav></body></html>
