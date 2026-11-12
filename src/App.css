@@ -62,8 +62,8 @@ button:focus-visible, input:focus-visible {
 }
 .brand-wrap { display: inline-flex; align-items: center; gap: 12px; padding: 0; background: transparent; text-align: left; }
 .brand-mark {
-  display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid var(--gold);
-  border-radius: 50%; background: var(--surface-strong); color: var(--terracotta); font-family: 'Playfair Display', Georgia, serif; font-size: 20px; font-weight: 700;
+  display: block; flex: 0 0 44px; width: 44px; height: 44px; border-radius: 10px;
+  background: #160c1d; object-fit: cover; box-shadow: 0 2px 8px rgba(43, 20, 52, 0.18);
 }
 .brand-name { color: var(--terracotta); font-family: 'Playfair Display', Georgia, serif; font-size: 18px; font-weight: 600; letter-spacing: 0; white-space: nowrap; }
 .main-nav { display: flex; align-items: center; gap: 24px; }
@@ -147,7 +147,7 @@ button:focus-visible, input:focus-visible {
   display: flex; flex-direction: column; align-items: flex-start; min-height: 190px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface);
   text-align: left; box-shadow: 0 2px 8px rgba(43, 33, 24, 0.06); transition: transform 160ms ease, box-shadow 160ms ease;
 }
-.holiday-card:hover, .product-card:hover, .shop-item:hover, .guide-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43, 33, 24, 0.1); }
+.holiday-card:hover, .product-card:hover, .shop-item:hover, .guide-card:hover, .category-card:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(43, 33, 24, 0.1); }
 .holiday-card.active { border-color: var(--gold); background: var(--surface); }
 .holiday-date {
   display: inline-flex; align-items: center; min-height: 28px; padding: 6px 10px; border-radius: 999px; background: var(--surface-strong); color: var(--terracotta-strong);
@@ -194,6 +194,7 @@ button:focus-visible, input:focus-visible {
 .category-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); }
 .category-card {
   display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; min-height: 132px; padding: 18px 12px;
+  color: var(--ink); font-size: inherit; cursor: pointer;
 }
 .category-icon {
   display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; background: var(--surface-strong); color: var(--terracotta); font-size: 1.5rem;
@@ -213,6 +214,7 @@ button:focus-visible, input:focus-visible {
 .process-card > span { display: grid; width: 32px; height: 32px; place-items: center; border-radius: 50%; background: var(--terracotta); color: white; font-size: 13px; font-weight: 700; }
 .process-card h3 { margin: 14px 0 6px; font-family: 'Playfair Display', Georgia, serif; font-size: 18px; }
 .process-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.process-action { margin-top: 12px; padding: 0; }
 .page-section { padding-top: 36px; }
 .calendar-actions { display: flex; align-items: center; gap: 14px; }
 .month-controls { display: flex; align-items: center; gap: 6px; }
@@ -397,7 +399,7 @@ button:focus-visible, input:focus-visible {
 @media (max-width: 720px) {
   .container { width: min(1200px, calc(100% - 32px)); }
   .topbar-inner { min-height: 60px; padding: 8px 0; }
-  .brand-mark { width: 30px; height: 30px; }
+  .brand-mark { flex-basis: 38px; width: 38px; height: 38px; }
   .brand-name { font-size: 16px; }
   .main-nav { display: none; }
   .topbar-actions { gap: 8px; margin-left: auto; }
@@ -598,6 +600,7 @@ button:focus-visible, input:focus-visible {
 @media (max-width: 360px) {
   .topbar-inner { gap: 8px; }
   .brand-wrap { min-width: 0; gap: 7px; }
+  .brand-mark { flex-basis: 32px; width: 32px; height: 32px; }
   .brand-name { font-size: 14px; }
   .topbar-actions { gap: 0; }
   .icon-button { gap: 4px; padding: 6px; }

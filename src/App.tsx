@@ -481,6 +481,24 @@ const products: Product[] = [
   { id: 'den-tho-led', name: 'Đèn thờ LED đổi màu', illustration: 'led-lamp', price: 160000, unit: 'đôi', category: 'Đèn nến', badge: 'Tiện dụng', region: 'Tất cả' },
 ]
 
+const homeProductCategories = [
+  { name: 'Hương', filter: 'Hương', icon: '✦' },
+  { name: 'Đèn nến', filter: 'Đèn nến', icon: '✧' },
+  { name: 'Vàng mã', filter: 'Vàng mã', icon: '❀' },
+  { name: 'Hoa', filter: 'Hoa', icon: '❋' },
+  { name: 'Trái cây', filter: 'Trái cây', icon: '☼' },
+  { name: 'Bộ lễ', filter: 'Bộ lễ', icon: '◌' },
+] as const
+
+function productMatchesCategory(product: Product, category: string) {
+  const name = product.name.toLocaleLowerCase('vi')
+  if (category === 'Tất cả') return true
+  if (category === 'Hoa') return product.category === 'Hoa' || name.includes('hoa')
+  if (category === 'Trái cây') return product.category === 'Hoa quả' || name.includes('trái cây') || name.includes('hoa quả')
+  if (category === 'Bộ lễ') return product.category === 'Mâm lễ' || name.includes('mâm lễ') || name.includes('bộ lễ')
+  return product.category === category
+}
+
 const guides: Guide[] = [
   {
     id: 'mau-mam-le',
@@ -842,7 +860,7 @@ function App() {
   const visibleProducts = useMemo(() => {
     const filtered = allProducts.filter((product) => (
       (activeRegion === 'Tất cả' || product.region === activeRegion || product.region === 'Tất cả')
-      && (productCategory === 'Tất cả' || product.category === productCategory)
+      && productMatchesCategory(product, productCategory)
     ))
     if (productSort === 'price-low') return filtered.sort((a, b) => a.price - b.price)
     if (productSort === 'price-high') return filtered.sort((a, b) => b.price - a.price)
@@ -935,6 +953,14 @@ function App() {
   function openGuide(category = 'Tất cả') {
     setGuideCategory(category)
     navigate('guide')
+  }
+
+  function openProductCategory(category: string) {
+    setProductCategory(category)
+    setActiveRegion('Tất cả')
+    const firstMatch = allProducts.find((product) => productMatchesCategory(product, category))
+    if (firstMatch) setSelectedProductId(firstMatch.id)
+    navigate('shop')
   }
 
   function setHolidayChecklistItem(itemId: string, checked: boolean) {
@@ -1395,7 +1421,7 @@ function App() {
       <header className="topbar">
         <div className="container topbar-inner">
           <button className="brand-wrap" aria-label="Cúng Kiến Tâm Linh - Trang chủ" onClick={() => navigate('home')}>
-            <div className="brand-mark">C</div>
+            <img className="brand-mark" src="/logo.png" alt="" />
             <div className="brand-copy">
               <span className="brand-name">Cúng Kiến Tâm Linh</span>
             </div>
@@ -1573,11 +1599,11 @@ function App() {
                   </div>
                 </div>
                 <div className="category-grid">
-                  {['Hương', 'Đèn nến', 'Vàng mã', 'Hoa', 'Trái cây', 'Bộ lễ'].map((name, index) => (
-                    <div key={name} className="category-card">
-                      <span className="category-icon">{['✦', '✧', '❀', '❋', '☼', '◌'][index]}</span>
+                  {homeProductCategories.map(({ name, filter, icon }) => (
+                    <button key={name} type="button" className="category-card" onClick={() => openProductCategory(filter)} aria-label={`Xem giá tham khảo danh mục ${name}`}>
+                      <span className="category-icon" aria-hidden="true">{icon}</span>
                       <span>{name}</span>
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -1593,15 +1619,18 @@ function App() {
                   </div>
                 </div>
                 <div className="process-grid">
-                  {[
-                    ['01', 'Tra cứu lịch & nghi lễ', 'Xem ngày lễ, tìm hiểu phong tục và chuẩn bị đúng dịp.'],
-                    ['02', 'Chọn checklist & đồ lễ', 'Tùy chỉnh danh sách theo nhu cầu và nếp nhà của bạn.'],
-                    ['03', 'Tìm nơi mua gần bạn', 'Mở bản đồ để tham khảo cửa hàng quanh khu vực và tự liên hệ trực tiếp.'],
-                  ].map(([step, title, description]) => (
+                  {([
+                    ['01', 'Tra cứu lịch & nghi lễ', 'Xem ngày lễ, tìm hiểu phong tục và chuẩn bị đúng dịp.', 'Mở lịch cúng →', 'calendar'],
+                    ['02', 'Chọn checklist & đồ lễ', 'Tùy chỉnh danh sách theo nhu cầu và nếp nhà của bạn.', 'Mở checklist chuẩn bị →', 'detail'],
+                    ['03', 'Tìm nơi mua gần bạn', 'Mở bản đồ để tham khảo cửa hàng quanh khu vực và tự liên hệ trực tiếp.', 'Tìm địa điểm gần bạn →', 'shop'],
+                  ] as const).map(([step, title, description, action, destination]) => (
                     <article className="process-card" key={step}>
                       <span>{step}</span>
                       <h3>{title}</h3>
                       <p>{description}</p>
+                      <button className="link-button process-action" type="button" onClick={() => navigate(destination)}>
+                        {action}
+                      </button>
                     </article>
                   ))}
                 </div>
@@ -1996,7 +2025,7 @@ function App() {
                 </fieldset>
                 <fieldset>
                   <legend>Danh mục sản phẩm</legend>
-                  {['Tất cả', 'Mâm lễ', 'Hương', 'Vàng mã', 'Hoa quả', 'Đèn nến', 'Khác'].map((category) => (
+                  {['Tất cả', 'Mâm lễ', 'Bộ lễ', 'Hương', 'Vàng mã', 'Hoa quả', 'Hoa', 'Trái cây', 'Đèn nến', 'Khác'].map((category) => (
                     <button key={category} className={`filter-option ${productCategory === category ? 'active' : ''}`} onClick={() => setProductCategory(category)}>
                       <span className="filter-check">{productCategory === category ? '✓' : ''}</span>{category}
                     </button>
