@@ -1,0 +1,11 @@
+.env*
+!.env.example
+!.env.migrate.example
+data/
+*.sqlite
+*.sqlite-*
+*.db
+*.db-*
+node_modules/
+dist/
+dist-server/

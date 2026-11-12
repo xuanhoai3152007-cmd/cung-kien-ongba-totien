@@ -1,23 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
 
 :root {
-  font-family: 'DM Sans', 'Segoe UI', sans-serif;
-  color: #332c26;
-  background: #fbf9f5;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #2b2118;
+  background: #fbf6ec;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-optical-sizing: auto;
   font-weight: 400;
-  --ink: #332c26;
-  --muted: #827970;
-  --paper: #fbf9f5;
-  --paper-deep: #f3eee5;
-  --line: #eae3d8;
-  --terracotta: #a94f38;
-  --terracotta-dark: #8f402e;
-  --olive: #727b5c;
+  --ink: #2b2118;
+  --muted: #6b5e50;
+  --paper: #fbf6ec;
+  --paper-deep: #f3ead8;
+  --line: #e3d6bf;
+  --terracotta: #8b1e1e;
+  --terracotta-dark: #6f1717;
+  --olive: #2e7d4f;
 }
 
 * {
@@ -25,7 +25,7 @@
 }
 
 body {
-  min-width: 320px;
+  min-width: 280px;
   margin: 0;
 }
 
@@ -41,13 +41,13 @@ button {
 button:focus-visible,
 a:focus-visible,
 input:focus-visible {
-  outline: 3px solid #c98268;
+  outline: 2px solid #c8963e;
   outline-offset: 3px;
 }
 
 ::selection {
   color: #fff;
-  background: #a94f38;
+  background: #8b1e1e;
 }
 
 #root {
