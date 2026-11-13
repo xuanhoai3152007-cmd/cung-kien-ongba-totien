@@ -18,6 +18,8 @@ data/
 *.sqlite-*
 *.db
 *.db-*
+ios/Config.xcconfig
+ios/*.xcodeproj/
 
 # Editor directories and files
 .vscode/*

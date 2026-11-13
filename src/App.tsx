@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState, type FormEvent } from 'react'
 import {
   api,
   ApiError,
+  type AdminGuide,
   type AdminHoliday,
   type AdminPrayer,
   type AdminProduct,
@@ -69,15 +70,7 @@ type Product = {
   region: Region
 }
 
-type Guide = {
-  id: string
-  title: string
-  summary: string
-  tag: string
-  category: string
-  steps: string[]
-  note: string
-}
+type Guide = AdminGuide
 
 const regions: Region[] = ['Tất cả', 'Bắc', 'Trung', 'Nam']
 
@@ -482,13 +475,50 @@ const products: Product[] = [
 ]
 
 const homeProductCategories = [
-  { name: 'Hương', filter: 'Hương', icon: '✦' },
-  { name: 'Đèn nến', filter: 'Đèn nến', icon: '✧' },
-  { name: 'Vàng mã', filter: 'Vàng mã', icon: '❀' },
-  { name: 'Hoa', filter: 'Hoa', icon: '❋' },
-  { name: 'Trái cây', filter: 'Trái cây', icon: '☼' },
-  { name: 'Bộ lễ', filter: 'Bộ lễ', icon: '◌' },
+  { name: 'Hương', filter: 'Hương', icon: 'incense', description: 'Nhang trầm, hương hoa' },
+  { name: 'Đèn nến', filter: 'Đèn nến', icon: 'candle', description: 'Nến và đèn thờ' },
+  { name: 'Vàng mã', filter: 'Vàng mã', icon: 'offering', description: 'Giá tham khảo theo bộ' },
+  { name: 'Hoa', filter: 'Hoa', icon: 'flower', description: 'Hoa tươi theo dịp' },
+  { name: 'Trái cây', filter: 'Trái cây', icon: 'fruit', description: 'Mâm quả theo mùa' },
+  { name: 'Bộ lễ', filter: 'Bộ lễ', icon: 'altar', description: 'Các bộ lễ gợi ý' },
 ] as const
+
+type RitualIconName = 'calendar' | 'checklist' | 'map' | 'incense' | 'candle' | 'offering' | 'flower' | 'fruit' | 'altar'
+
+function RitualIcon({ name, size = 25 }: { name: RitualIconName; size?: number }) {
+  const common = {
+    'aria-hidden': true as const,
+    viewBox: '0 0 32 32',
+    width: size,
+    height: size,
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.7,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+  }
+
+  switch (name) {
+    case 'calendar':
+      return <svg {...common}><rect x="5" y="7" width="22" height="20" rx="4" /><path d="M10 4v6M22 4v6M5 13h22M11 18h3M18 18h3M11 22h3" /></svg>
+    case 'checklist':
+      return <svg {...common}><path d="m6 10 2 2 4-4M15 10h10M6 20l2 2 4-4M15 20h10" /><path d="M5 4h22v24H5z" /></svg>
+    case 'map':
+      return <svg {...common}><path d="M16 28s9-8.3 9-16a9 9 0 1 0-18 0c0 7.7 9 16 9 16Z" /><circle cx="16" cy="12" r="3" /><path d="M4 27h7M21 27h7" /></svg>
+    case 'incense':
+      return <svg {...common}><path d="M9 27h14M11 23h10M13 19h6M16 18V8" /><path d="M13 8c0-2 2-2 2-4M18 8c0-2 2-2 2-4" /><path d="M8 13c-2-2 1-3 0-5M24 13c2-2-1-3 0-5" /></svg>
+    case 'candle':
+      return <svg {...common}><path d="M11 15h10l-1 12h-8l-1-12Z" /><path d="M16 15c-4-4 0-7 0-11 4 4 5 7 0 11Z" /><path d="M8 27h16M16 3V1M8 8 6 6M24 8l2-2" /></svg>
+    case 'offering':
+      return <svg {...common}><path d="M7 17h18l-2 10H9L7 17Z" /><path d="M10 17c0-4 3-7 6-7s6 3 6 7M16 10V5M12 7c1-2 2-3 4-4 2 1 3 2 4 4" /><path d="M11 21h10" /></svg>
+    case 'flower':
+      return <svg {...common}><path d="M16 16c-6-2-7-8-3-10 2 1 3 3 3 5 0-4 4-7 7-4 1 3-1 6-5 8 4-2 8 0 7 4-2 3-6 3-9 0 3 3 2 7-2 8-4-1-5-5-2-8-3 3-7 3-9 0-1-4 3-6 7-4-4-2-5-6-2-8 4-1 7 2 8 6Z" /><circle cx="16" cy="16" r="2" /></svg>
+    case 'fruit':
+      return <svg {...common}><path d="M16 10c-5-6-12-2-11 5 1 8 6 13 11 10 5 3 10-2 11-10 1-7-6-11-11-5Z" /><path d="M16 10c0-4 2-7 6-8M16 8c-2-3-5-4-8-3 1 3 4 5 8 5" /></svg>
+    case 'altar':
+      return <svg {...common}><path d="M5 25h22M8 21h16M10 21V13h12v8M13 13c0-3 1-5 3-7 2 2 3 4 3 7M16 6V3M4 28h24" /><path d="M7 16h3M22 16h3M12 24h8" /></svg>
+  }
+}
 
 function productMatchesCategory(product: Product, category: string) {
   const name = product.name.toLocaleLowerCase('vi')
@@ -613,8 +643,6 @@ const guides: Guide[] = [
     note: 'Lịch âm có thể khác theo phương pháp tính hoặc nguồn phát hành; ứng dụng không xác nhận ngày lễ chính thức.',
   },
 ]
-
-const guideCategories = ['Tất cả', ...guides.map((guide) => guide.category)]
 
 const checklist = [
   { id: '1', name: 'Hương & nhang', quantity: '1', unit: 'bó', checked: true },
@@ -769,11 +797,13 @@ function App() {
   const [managedHolidays, setManagedHolidays] = useState<AdminHoliday[]>([])
   const [managedProducts, setManagedProducts] = useState<AdminProduct[]>([])
   const [managedPrayers, setManagedPrayers] = useState<AdminPrayer[]>([])
-  const [adminSection, setAdminSection] = useState<'holidays' | 'products' | 'prayers'>('holidays')
+  const [managedGuides, setManagedGuides] = useState<AdminGuide[]>([])
+  const [adminSection, setAdminSection] = useState<'holidays' | 'products' | 'prayers' | 'guides'>('holidays')
   const [adminHolidayDateType, setAdminHolidayDateType] = useState<'lunar' | 'monthly' | 'solar' | 'easter'>('lunar')
   const [editingAdminHoliday, setEditingAdminHoliday] = useState<AdminHoliday | null>(null)
   const [editingAdminProduct, setEditingAdminProduct] = useState<AdminProduct | null>(null)
   const [editingAdminPrayer, setEditingAdminPrayer] = useState<AdminPrayer | null>(null)
+  const [editingAdminGuide, setEditingAdminGuide] = useState<AdminGuide | null>(null)
   const [cartLines, setCartLines] = useState(() => readLocalValue<CartLine[]>('cung-kien-demo-cart', [], (value): value is CartLine[] => Array.isArray(value) && value.every(isCartLine)))
   const [holidayChecklists, setHolidayChecklists] = useState(() => readLocalValue<Record<string, Record<string, boolean>>>('cung-kien-demo-holiday-checklists', {}, isHolidayChecklist))
   const [completedHolidays, setCompletedHolidays] = useState(() => readLocalValue<CompletedHoliday[]>('cung-kien-demo-completed-holidays', [], (value): value is CompletedHoliday[] => Array.isArray(value) && value.every(isCompletedHoliday)))
@@ -804,6 +834,10 @@ function App() {
       .filter((product) => !products.some((existing) => existing.id === product.id))
       .map((product) => ({ ...product })),
   ], [managedProducts])
+  const allGuides = useMemo<Guide[]>(() => [
+    ...guides,
+    ...managedGuides.filter((guide) => !guides.some((existing) => existing.id === guide.id)),
+  ], [managedGuides])
 
   useEffect(() => {
     let active = true
@@ -836,6 +870,7 @@ function App() {
         setManagedHolidays(content.holidays)
         setManagedProducts(content.products)
         setManagedPrayers(content.prayers)
+        setManagedGuides(content.guides)
       } catch (error) {
         if (active) setStorageError(error instanceof Error ? error.message : 'Không thể tải nội dung từ Supabase.')
       }
@@ -929,9 +964,10 @@ function App() {
   const selectedCalendarCell = calendarCells.find((cell) => cell.day === selectedDay)
   const selectedDateHolidays = selectedCalendarCell?.holidays ?? []
   const selectedDateAnniversaries = selectedCalendarCell?.anniversaries ?? []
+  const guideCategories = ['Tất cả', ...new Set(allGuides.map((guide) => guide.category))]
   const visibleGuides = guideCategory === 'Tất cả'
-    ? guides
-    : guides.filter((guide) => guide.category === guideCategory)
+    ? allGuides
+    : allGuides.filter((guide) => guide.category === guideCategory)
 
   useEffect(() => {
     if (!notice) return
@@ -1249,6 +1285,7 @@ function App() {
     setManagedHolidays(content.holidays)
     setManagedProducts(content.products)
     setManagedPrayers(content.prayers)
+    setManagedGuides(content.guides)
   }
 
   function makeAdminContentId(title: string) {
@@ -1392,6 +1429,59 @@ function App() {
     }
   }
 
+  async function saveAdminGuide(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget)
+    const title = String(formData.get('title') ?? '').trim()
+    const steps = String(formData.get('steps') ?? '')
+      .split(/\r?\n/)
+      .map((step) => step.trim())
+      .filter(Boolean)
+    if (steps.length === 0) {
+      setNotice('Hãy nhập ít nhất một bước hướng dẫn.')
+      return
+    }
+    if (steps.length > 20) {
+      setNotice('Mỗi bài hướng dẫn có tối đa 20 bước.')
+      return
+    }
+    const category = String(formData.get('category') ?? '').trim()
+    const summary = String(formData.get('summary') ?? '').trim()
+    if (!title || !category || !summary) {
+      setNotice('Hãy nhập tiêu đề, chủ đề và phần tóm tắt cho bài hướng dẫn.')
+      return
+    }
+    const guide: AdminGuide = {
+      id: editingAdminGuide?.id ?? makeAdminContentId(title),
+      title,
+      summary,
+      tag: String(formData.get('tag') ?? '').trim() || category,
+      category,
+      steps,
+      note: String(formData.get('note') ?? '').trim(),
+    }
+    try {
+      await api.saveAdminGuide(guide)
+      await refreshAdminContent()
+      setEditingAdminGuide(null)
+      setNotice(editingAdminGuide ? 'Đã cập nhật bài hướng dẫn.' : 'Đã thêm bài hướng dẫn.')
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : 'Không thể lưu bài hướng dẫn.')
+    }
+  }
+
+  async function deleteAdminGuide(guide: AdminGuide) {
+    if (!window.confirm(`Xóa bài hướng dẫn “${guide.title}” khỏi website?`)) return
+    try {
+      await api.deleteAdminGuide(guide.id)
+      await refreshAdminContent()
+      if (guideCategory === guide.category) setGuideCategory('Tất cả')
+      setNotice('Đã xóa bài hướng dẫn.')
+    } catch (error) {
+      setNotice(error instanceof Error ? error.message : 'Không thể xóa bài hướng dẫn.')
+    }
+  }
+
   const nearbyPlacesPanel = (
     <section className="nearby-places-panel">
       <div>
@@ -1486,11 +1576,19 @@ function App() {
                   <h1>Chuẩn bị lễ chu đáo,<br />tâm an ý thành</h1>
                   <p>Tra cứu lịch âm dương, phong tục ba miền, tham khảo giá lễ vật và tìm địa điểm mua phù hợp gần bạn.</p>
                   <div className="hero-actions">
-                    <button className="primary-button" onClick={() => setView('calendar')}>Xem lịch cúng</button>
-                    <button className="secondary-button" onClick={() => setView('shop')}>Tham khảo lễ vật</button>
+                    <button className="primary-button" onClick={() => navigate('calendar')}><RitualIcon name="calendar" size={19} />Xem lịch cúng</button>
+                    <button className="secondary-button" onClick={() => navigate('shop')}><RitualIcon name="altar" size={19} />Tham khảo lễ vật</button>
                   </div>
+                  <div className="hero-trust"><span><i />Gợi ý theo nếp nhà</span><span><i />Tham khảo, không áp đặt</span></div>
                 </div>
-                <div className="hero-ornament" aria-hidden="true"><span>蓮</span></div>
+                <div className="hero-artwork">
+                  <div className="hero-artwork-frame">
+                    <img src="/logo.png" alt="Minh họa lễ vật và không khí ngày lễ truyền thống" />
+                  </div>
+                  <div className="hero-artwork-note"><span className="hero-note-icon"><RitualIcon name="incense" size={21} /></span><span><b>Thành tâm là chính</b><small>Chuẩn bị vừa đủ, tùy điều kiện gia đình</small></span></div>
+                  <span className="hero-artwork-sparkle sparkle-one" aria-hidden="true">✦</span>
+                  <span className="hero-artwork-sparkle sparkle-two" aria-hidden="true">✧</span>
+                </div>
               </div>
             </section>
 
@@ -1509,14 +1607,33 @@ function App() {
               <button className="primary-button small" onClick={() => navigate('calendar')}>Xem cần chuẩn bị</button>
             </section>
 
+            <section className="home-highlights container" aria-label="Điểm nổi bật">
+              <button onClick={() => navigate('calendar')}>
+                <span className="highlight-icon"><RitualIcon name="calendar" /></span>
+                <span><b>Tra cứu ngày lễ</b><small>Lịch âm dương tham khảo</small></span>
+                <span className="highlight-arrow" aria-hidden="true">→</span>
+              </button>
+              <button onClick={() => navigate('detail')}>
+                <span className="highlight-icon"><RitualIcon name="checklist" /></span>
+                <span><b>Chuẩn bị chu đáo</b><small>Checklist theo từng dịp</small></span>
+                <span className="highlight-arrow" aria-hidden="true">→</span>
+              </button>
+              <button onClick={() => navigate('shop')}>
+                <span className="highlight-icon"><RitualIcon name="altar" /></span>
+                <span><b>Dự toán nhẹ nhàng</b><small>Giá lễ vật để tham khảo</small></span>
+                <span className="highlight-arrow" aria-hidden="true">→</span>
+              </button>
+            </section>
+
             <section className="section-block">
               <div className="container">
                 <div className="section-heading-row">
                   <div>
                     <span className="eyebrow">Sắp tới</span>
                     <h2>Lễ gần nhất</h2>
+                    <p>Chọn một dịp để xem thông tin và gợi ý chuẩn bị.</p>
                   </div>
-                  <button className="link-button" onClick={() => navigate('holidays')}>Xem tất cả</button>
+                  <button className="link-button section-more" onClick={() => navigate('holidays')}>Xem tất cả <span aria-hidden="true">→</span></button>
                 </div>
                 <div className="holiday-row">
                   {visibleHolidays.slice(0, 5).map((holiday) => (
@@ -1544,6 +1661,7 @@ function App() {
                   <div>
                     <span className="eyebrow">Chọn vùng miền</span>
                     <h2>Chọn phong tục phù hợp</h2>
+                    <p>Tham khảo khác biệt vùng miền, ưu tiên nếp nhà của bạn.</p>
                   </div>
                 </div>
                 <div className="region-grid">
@@ -1569,6 +1687,7 @@ function App() {
                   <div>
                     <span className="eyebrow">Bộ lễ nổi bật</span>
                     <h2>Gợi ý cho ngày lễ</h2>
+                    <p>Một vài mức giá dự kiến để bạn dễ hình dung.</p>
                   </div>
                 </div>
                 <div className="product-grid">
@@ -1596,13 +1715,15 @@ function App() {
                   <div>
                     <span className="eyebrow">Danh mục</span>
                     <h2>Chọn vật phẩm cần thiết</h2>
+                    <p>Chạm vào từng nhóm để xem mặt hàng và giá tham khảo.</p>
                   </div>
                 </div>
                 <div className="category-grid">
-                  {homeProductCategories.map(({ name, filter, icon }) => (
+                  {homeProductCategories.map(({ name, filter, icon, description }) => (
                     <button key={name} type="button" className="category-card" onClick={() => openProductCategory(filter)} aria-label={`Xem giá tham khảo danh mục ${name}`}>
-                      <span className="category-icon" aria-hidden="true">{icon}</span>
-                      <span>{name}</span>
+                      <span className="category-icon"><RitualIcon name={icon} size={26} /></span>
+                      <span className="category-copy"><b>{name}</b><small>{description}</small></span>
+                      <span className="category-arrow" aria-hidden="true">↗</span>
                     </button>
                   ))}
                 </div>
@@ -1625,7 +1746,7 @@ function App() {
                     ['03', 'Tìm nơi mua gần bạn', 'Mở bản đồ để tham khảo cửa hàng quanh khu vực và tự liên hệ trực tiếp.', 'Tìm địa điểm gần bạn →', 'shop'],
                   ] as const).map(([step, title, description, action, destination]) => (
                     <article className="process-card" key={step}>
-                      <span>{step}</span>
+                      <div className="process-card-top"><span>{step}</span><i><RitualIcon name={destination === 'calendar' ? 'calendar' : destination === 'detail' ? 'checklist' : 'map'} size={25} /></i></div>
                       <h3>{title}</h3>
                       <p>{description}</p>
                       <button className="link-button process-action" type="button" onClick={() => navigate(destination)}>
@@ -1646,7 +1767,7 @@ function App() {
                   </div>
                 </div>
                 <div className="guide-grid">
-                  {guides.slice(0, 3).map((guide) => (
+                  {allGuides.slice(0, 3).map((guide) => (
                     <article key={guide.id} className="guide-card">
                       <span className="guide-tag">{guide.tag}</span>
                       <h3>{guide.title}</h3>
@@ -2296,6 +2417,7 @@ function App() {
                 <button type="button" aria-pressed={adminSection === 'holidays'} className={adminSection === 'holidays' ? 'selected' : ''} onClick={() => setAdminSection('holidays')}>Ngày lễ</button>
                 <button type="button" aria-pressed={adminSection === 'products'} className={adminSection === 'products' ? 'selected' : ''} onClick={() => setAdminSection('products')}>Lễ vật & giá</button>
                 <button type="button" aria-pressed={adminSection === 'prayers'} className={adminSection === 'prayers' ? 'selected' : ''} onClick={() => setAdminSection('prayers')}>Văn khấn</button>
+                <button type="button" aria-pressed={adminSection === 'guides'} className={adminSection === 'guides' ? 'selected' : ''} onClick={() => setAdminSection('guides')}>Hướng dẫn</button>
               </div>
 
               {adminSection === 'holidays' && (
@@ -2468,6 +2590,42 @@ function App() {
                         <div className="form-actions">
                           <button className="link-button" onClick={() => setEditingAdminPrayer(prayer)}>Sửa</button>
                           <button className="link-button danger-link" onClick={() => deleteAdminPrayer(prayer)}>Xóa</button>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {adminSection === 'guides' && (
+                <div className="admin-content-layout">
+                  <div className="account-card">
+                    <h3>{editingAdminGuide ? 'Chỉnh sửa hướng dẫn' : 'Thêm bài hướng dẫn'}</h3>
+                    <p className="account-muted">Bài viết sẽ hiển thị công khai trong trang Hướng dẫn sau khi lưu. Mỗi dòng trong phần các bước sẽ thành một mục riêng.</p>
+                    <form key={editingAdminGuide?.id ?? 'new-admin-guide'} className="account-form admin-form" onSubmit={saveAdminGuide}>
+                      <label className="admin-full-field">Tiêu đề<input name="title" defaultValue={editingAdminGuide?.title} maxLength={160} required /></label>
+                      <label>Chủ đề<input name="category" defaultValue={editingAdminGuide?.category} maxLength={60} placeholder="Ví dụ: An toàn, Phật giáo..." required /></label>
+                      <label>Nhãn hiển thị<input name="tag" defaultValue={editingAdminGuide?.tag} maxLength={60} placeholder="Ví dụ: Nghi thức chung" /></label>
+                      <label className="admin-full-field">Tóm tắt<textarea name="summary" defaultValue={editingAdminGuide?.summary} maxLength={500} rows={2} required /></label>
+                      <label className="admin-full-field">Các bước hướng dẫn<textarea name="steps" defaultValue={editingAdminGuide?.steps.join('\n')} maxLength={10000} rows={7} placeholder={'Mỗi bước viết trên một dòng.\nVí dụ: Kiểm tra ngày lễ với nguồn phù hợp.'} required /></label>
+                      <label className="admin-full-field">Lưu ý<textarea name="note" defaultValue={editingAdminGuide?.note} maxLength={2000} rows={3} placeholder="Không bắt buộc" /></label>
+                      <div className="form-actions admin-full-field">
+                        <button className="primary-button" type="submit">{editingAdminGuide ? 'Lưu hướng dẫn' : 'Thêm hướng dẫn'}</button>
+                        {editingAdminGuide && <button className="secondary-button" type="button" onClick={() => setEditingAdminGuide(null)}>Hủy sửa</button>}
+                      </div>
+                    </form>
+                  </div>
+                  <div className="account-card admin-managed-list">
+                    <h3>Hướng dẫn đã thêm ({managedGuides.length})</h3>
+                    {managedGuides.length === 0 ? <p className="account-muted">Chưa có bài hướng dẫn do admin thêm.</p> : managedGuides.map((guide) => (
+                      <article className="admin-item" key={guide.id}>
+                        <div>
+                          <b>{guide.title}</b>
+                          <span>{guide.category} · {guide.steps.length} bước · {guide.summary}</span>
+                        </div>
+                        <div className="form-actions">
+                          <button className="link-button" onClick={() => setEditingAdminGuide(guide)}>Sửa</button>
+                          <button className="link-button danger-link" onClick={() => deleteAdminGuide(guide)}>Xóa</button>
                         </div>
                       </article>
                     ))}

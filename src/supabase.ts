@@ -59,6 +59,16 @@ export type AdminPrayer = {
   content: string
 }
 
+export type AdminGuide = {
+  id: string
+  title: string
+  summary: string
+  tag: string
+  category: string
+  steps: string[]
+  note: string
+}
+
 type ProfileRow = {
   id: string
   full_name: string
@@ -107,6 +117,18 @@ type PrayerRow = {
   holiday_id: string
   region: Exclude<Region, 'Tất cả'>
   content: string
+  updated_at: string
+}
+
+type GuideRow = {
+  id: string
+  title: string
+  summary: string
+  tag: string
+  category: string
+  steps: string[]
+  note: string
+  created_at: string
   updated_at: string
 }
 
@@ -187,6 +209,12 @@ export type Database = {
         Update: Partial<Omit<PrayerRow, 'holiday_id' | 'region'>>
         Relationships: []
       }
+      guide_articles: {
+        Row: GuideRow
+        Insert: Omit<GuideRow, 'created_at' | 'updated_at'> & Partial<Pick<GuideRow, 'created_at' | 'updated_at'>>
+        Update: Partial<Omit<GuideRow, 'id' | 'created_at' | 'updated_at'>>
+        Relationships: []
+      }
     }
     Views: Record<string, never>
     Functions: {
@@ -231,6 +259,9 @@ function getClient() {
 
 function raiseSupabaseError(error: { message: string; code?: string }, status = 400): never {
   if (error.code === 'PGRST116') throw new ApiError('Không tìm thấy dữ liệu hoặc dữ liệu không còn tồn tại.', 404)
+  if (error.code === 'PGRST205' && error.message.toLocaleLowerCase('en').includes('guide_articles')) {
+    throw new ApiError('Supabase chưa nhận diện bảng hướng dẫn. Trong SQL Editor, chạy migration supabase/migrations/20261113002000_admin_guides.sql; nếu bảng đã tồn tại, chạy NOTIFY pgrst, \'reload schema\'.', 500)
+  }
   const message = error.message.toLocaleLowerCase('en')
   if (message.includes('invalid login credentials')) {
     throw new ApiError('Email hoặc mật khẩu không chính xác.', 401)
@@ -312,6 +343,18 @@ function toAdminPrayer(row: PrayerRow): AdminPrayer {
     holidayId: row.holiday_id,
     region: row.region,
     content: row.content,
+  }
+}
+
+function toAdminGuide(row: GuideRow): AdminGuide {
+  return {
+    id: row.id,
+    title: row.title,
+    summary: row.summary,
+    tag: row.tag,
+    category: row.category,
+    steps: row.steps,
+    note: row.note,
   }
 }
 
@@ -454,18 +497,21 @@ export const api = {
 
   async listPublicContent() {
     const supabase = getClient()
-    const [holidayResult, productResult, prayerResult] = await Promise.all([
+    const [holidayResult, productResult, prayerResult, guideResult] = await Promise.all([
       supabase.from('holidays').select('*').order('title'),
       supabase.from('catalog_products').select('*').order('name'),
       supabase.from('prayers').select('*').order('holiday_id').order('region'),
+      supabase.from('guide_articles').select('*').order('category').order('title'),
     ])
     if (holidayResult.error) raiseSupabaseError(holidayResult.error)
     if (productResult.error) raiseSupabaseError(productResult.error)
     if (prayerResult.error) raiseSupabaseError(prayerResult.error)
+    if (guideResult.error) raiseSupabaseError(guideResult.error)
     return {
       holidays: holidayResult.data.map(toAdminHoliday),
       products: productResult.data.map(toAdminProduct),
       prayers: prayerResult.data.map(toAdminPrayer),
+      guides: guideResult.data.map(toAdminGuide),
     }
   },
 
@@ -536,6 +582,25 @@ export const api = {
       .delete()
       .eq('holiday_id', prayer.holidayId)
       .eq('region', prayer.region)
+    if (error) raiseSupabaseError(error)
+  },
+
+  async saveAdminGuide(guide: AdminGuide) {
+    const { error } = await getClient().from('guide_articles').upsert({
+      id: guide.id,
+      title: guide.title,
+      summary: guide.summary,
+      tag: guide.tag,
+      category: guide.category,
+      steps: guide.steps,
+      note: guide.note,
+      updated_at: new Date().toISOString(),
+    })
+    if (error) raiseSupabaseError(error)
+  },
+
+  async deleteAdminGuide(id: string) {
+    const { error } = await getClient().from('guide_articles').delete().eq('id', id)
     if (error) raiseSupabaseError(error)
   },
 }

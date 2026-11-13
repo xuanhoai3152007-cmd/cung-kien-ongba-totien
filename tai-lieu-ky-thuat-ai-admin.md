@@ -8,6 +8,8 @@ Xây dựng khu vực quản trị để quản lý mẫu nghi lễ, lễ vật,
 người dùng và nhật ký. AI có thể hỗ trợ tạo bản nháp, nhưng nội dung
 phải được con người kiểm duyệt trước khi xuất bản.
 
+> Phân biệt phạm vi: các mục bên dưới là kiến trúc/đề xuất mở rộng, không phải toàn bộ chức năng đã triển khai. Bản hiện tại có trang Admin trong SPA, cấp quyền bằng email allowlist và CRUD ngày lễ, lễ vật, văn khấn cùng bài hướng dẫn trong Supabase; chưa có workflow nháp/duyệt, phân vai trò chi tiết, quản lý người dùng nội bộ hoặc audit log.
+
 ## 2. Kiến trúc đề xuất
 
 -   Admin UI: React, có `AdminLayout` riêng.

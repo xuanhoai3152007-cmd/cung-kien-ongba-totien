@@ -5,7 +5,7 @@
 ## Cấu hình Supabase
 
 1. Tạo một project trên Supabase.
-2. Trong Supabase Dashboard, mở **SQL Editor**, chạy lần lượt toàn bộ nội dung của [migration dữ liệu tài khoản](./supabase/migrations/20261113000000_initial_schema.sql) rồi [migration nội dung và quyền admin](./supabase/migrations/20261113001000_admin_content.sql). File đầu tạo hồ sơ, ngày giỗ, trigger đăng ký và RLS cá nhân; file thứ hai tạo danh mục nội dung công khai, quyền ghi dành riêng cho admin.
+2. Trong Supabase Dashboard, mở **SQL Editor**, chạy lần lượt toàn bộ nội dung của [migration dữ liệu tài khoản](./supabase/migrations/20261113000000_initial_schema.sql), [migration nội dung và quyền admin](./supabase/migrations/20261113001000_admin_content.sql) và [migration bài hướng dẫn](./supabase/migrations/20261113002000_admin_guides.sql). Các migration tạo hồ sơ/ngày giỗ, nội dung công khai, quyền admin và bảng bài hướng dẫn.
 3. Vào **Project Settings → API** và lấy Project URL cùng `anon`/publishable key.
 4. Sao chép `.env.example` thành `.env.local`, rồi điền hai giá trị:
 
@@ -44,6 +44,10 @@
    - Nếu có domain riêng, thêm domain đó và đặt nó làm Site URL khi sẵn sàng.
 5. Mở website production, đăng ký/đăng nhập, thử lưu ngày giỗ và xem lại trang sau khi reload. Admin cần chạy migrations và cấp email trong `admin_allowlist` như hướng dẫn bên trên.
 
+## Widget nhắc ngày giỗ trên iPhone
+
+Website không thể tự tạo widget màn hình chính của iOS. Mã nguồn ứng dụng SwiftUI + WidgetKit dành cho iPhone nằm trong [ios/](./ios/); xem [hướng dẫn build và cài đặt](./ios/README.md). Cần Mac/Xcode để build, ký và cài ứng dụng. Widget đọc ngày giỗ từ tài khoản Supabase đang đăng nhập và hiển thị bản đồng bộ gần nhất.
+
 ## Cấp quyền quản trị nội dung
 
 1. Đăng ký tài khoản ứng dụng bằng email muốn cấp quyền admin và xác nhận email nếu Supabase bật xác nhận.
@@ -64,8 +68,15 @@ Trang **Quản trị** cho phép thêm, sửa và xóa nội dung do admin quả
 - Ngày lễ: ngày âm/dương cố định, ngày âm lặp hàng tháng, hoặc ngày tính theo lễ Phục Sinh.
 - Lễ vật: giá tham khảo, đơn vị, nhóm, vùng miền và kiểu minh họa.
 - Văn khấn: nội dung riêng cho từng ngày lễ và vùng miền; nội dung này thay phần gợi ý mặc định tương ứng.
+- Hướng dẫn: tiêu đề, chủ đề, nhãn, tóm tắt, các bước và lưu ý. Bài đã lưu hiển thị trong trang Hướng dẫn và bộ lọc chủ đề.
 
-Nội dung gốc đang có sẵn trong ứng dụng vẫn được giữ nguyên; nội dung mới do admin thêm sẽ được đọc từ các bảng Supabase.
+Nội dung gốc đang có sẵn trong ứng dụng vẫn được giữ nguyên; nội dung mới do admin thêm sẽ được đọc từ các bảng Supabase. Để thêm/sửa/xóa bài hướng dẫn, cần chạy migration `20261113002000_admin_guides.sql` trên Supabase trước khi deploy phiên bản giao diện có mục Hướng dẫn trong trang Quản trị.
+
+Nếu gặp lỗi `Could not find the table 'public.guide_articles' in the schema cache`, mở Supabase **SQL Editor**, chạy toàn bộ nội dung migration `supabase/migrations/20261113002000_admin_guides.sql`, chờ vài giây rồi tải lại website. Migration sẽ tạo bảng và yêu cầu PostgREST tải lại schema. Nếu bảng đã có nhưng lỗi vẫn còn, chạy riêng:
+
+```sql
+notify pgrst, 'reload schema';
+```
 
 ## Cấu trúc dữ liệu
 
@@ -73,7 +84,7 @@ Nội dung gốc đang có sẵn trong ứng dụng vẫn được giữ nguyên
 - `public.profiles`: hồ sơ, vùng miền và tùy chọn nhắc ngày giỗ.
 - `public.anniversaries`: ngày giỗ của gia đình.
 - `public.admin_allowlist`: danh sách email có quyền quản trị.
-- `public.holidays`, `public.catalog_products`, `public.prayers`: nội dung ngày lễ, lễ vật và văn khấn do admin quản lý.
+- `public.holidays`, `public.catalog_products`, `public.prayers`, `public.guide_articles`: nội dung ngày lễ, lễ vật, văn khấn và hướng dẫn do admin quản lý.
 
 RLS giới hạn việc đọc/sửa hồ sơ và ngày giỗ theo `auth.uid()`. Dự toán lễ vật, checklist và lịch sử hoàn thành ngày lễ vẫn được lưu trong trình duyệt, không nằm trong Supabase.
 
