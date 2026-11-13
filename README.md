@@ -44,6 +44,10 @@
    - Nếu có domain riêng, thêm domain đó và đặt nó làm Site URL khi sẵn sàng.
 5. Mở website production, đăng ký/đăng nhập, thử lưu ngày giỗ và xem lại trang sau khi reload. Admin cần chạy migrations và cấp email trong `admin_allowlist` như hướng dẫn bên trên.
 
+## Thêm lối tắt trên điện thoại
+
+Website có manifest PWA, biểu tượng cài ứng dụng mở thẳng **Lịch cúng**, và shortcut **Lịch nhắc** trong menu biểu tượng trên Android. Mở website bằng Chrome/Edge trên HTTPS, mở menu ☰ trên website rồi chọn **Thêm Cúng Kiến vào màn hình chính**; nếu trình duyệt hỗ trợ cài PWA, nút sẽ mở hộp thoại cài. Nếu chưa hiện hộp thoại, dùng menu trình duyệt → **Cài đặt ứng dụng** hoặc **Thêm vào màn hình chính**. Trên iPhone/iPad, mở bằng Safari → **Chia sẻ** → **Thêm vào Màn hình chính**. Sau đó chạm biểu tượng để vào thẳng lịch. Trên Android, nhấn giữ biểu tượng ứng dụng để mở shortcut **Lịch nhắc** nếu launcher hỗ trợ.
+
 ## Widget nhắc ngày giỗ trên iPhone
 
 Website không thể tự tạo widget màn hình chính của iOS. Mã nguồn ứng dụng SwiftUI + WidgetKit dành cho iPhone nằm trong [ios/](./ios/); xem [hướng dẫn build và cài đặt](./ios/README.md). Cần Mac/Xcode để build, ký và cài ứng dụng. Widget đọc ngày giỗ từ tài khoản Supabase đang đăng nhập và hiển thị bản đồng bộ gần nhất.

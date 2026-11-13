@@ -1,0 +1,41 @@
+{
+  "id": "/",
+  "name": "Cúng Kiến Tâm Linh",
+  "short_name": "Cúng Kiến",
+  "description": "Lịch cúng và nhắc lịch gia đình.",
+  "lang": "vi",
+  "start_url": "/?view=calendar",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#fbf6ec",
+  "theme_color": "#fbf6ec",
+  "icons": [
+    {
+      "src": "/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Lịch nhắc",
+      "short_name": "Lịch nhắc",
+      "description": "Mở nhanh lịch cúng và lịch gia đình",
+      "url": "/?view=calendar",
+      "icons": [
+        {
+          "src": "/pwa-icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

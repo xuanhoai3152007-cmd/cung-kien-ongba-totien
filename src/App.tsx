@@ -16,6 +16,16 @@ import './App.css'
 
 type Region = 'Tất cả' | 'Bắc' | 'Trung' | 'Nam'
 type View = 'home' | 'calendar' | 'holidays' | 'holiday-history' | 'detail' | 'shop' | 'cart' | 'guide' | 'login' | 'profile' | 'anniversaries' | 'admin'
+type PwaInstallPromptEvent = Event & {
+  prompt: () => Promise<void>
+  userChoice: Promise<{ outcome: 'accepted' | 'dismissed'; platform: string }>
+}
+
+function getViewFromLocation(): View {
+  const requestedView = new URLSearchParams(window.location.search).get('view')
+  const validViews: View[] = ['home', 'calendar', 'holidays', 'holiday-history', 'detail', 'shop', 'cart', 'guide', 'login', 'profile', 'anniversaries', 'admin']
+  return validViews.find((view) => view === requestedView) ?? 'home'
+}
 
 type CartLine = {
   productId: string
@@ -777,13 +787,14 @@ function isCartLine(value: unknown): value is CartLine {
 }
 
 function App() {
-  const [view, setView] = useState<View>('home')
+  const [view, setView] = useState<View>(getViewFromLocation)
   const [activeRegion, setActiveRegion] = useState<Region>('Tất cả')
   const [prayerRegion, setPrayerRegion] = useState<PrayerRegion>('Bắc')
   const [guideCategory, setGuideCategory] = useState('Tất cả')
   const [selectedHolidayId, setSelectedHolidayId] = useState<string>(holidays[0].id)
   const [selectedProductId, setSelectedProductId] = useState<string>(products[0].id)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [installPrompt, setInstallPrompt] = useState<PwaInstallPromptEvent | null>(null)
   const [calendarDate, setCalendarDate] = useState(() => new Date())
   const [selectedDay, setSelectedDay] = useState(() => new Date().getDate())
   const [productCategory, setProductCategory] = useState('Tất cả')
@@ -975,6 +986,23 @@ function App() {
     return () => window.clearTimeout(timer)
   }, [notice])
 
+  useEffect(() => {
+    const handleInstallPrompt = (event: Event) => {
+      event.preventDefault()
+      setInstallPrompt(event as PwaInstallPromptEvent)
+    }
+    const handleInstalled = () => setInstallPrompt(null)
+    const handleHistoryChange = () => setView(getViewFromLocation())
+    window.addEventListener('beforeinstallprompt', handleInstallPrompt)
+    window.addEventListener('appinstalled', handleInstalled)
+    window.addEventListener('popstate', handleHistoryChange)
+    return () => {
+      window.removeEventListener('beforeinstallprompt', handleInstallPrompt)
+      window.removeEventListener('appinstalled', handleInstalled)
+      window.removeEventListener('popstate', handleHistoryChange)
+    }
+  }, [])
+
   function navigate(nextView: View) {
     if (nextView === 'admin' && !demoUser?.isAdmin) {
       setNotice('Trang quản trị chỉ dành cho tài khoản admin đã được cấp quyền.')
@@ -982,8 +1010,25 @@ function App() {
       return
     }
     setView(nextView)
+    const nextUrl = nextView === 'home' ? '/' : `/?view=${encodeURIComponent(nextView)}`
+    window.history.pushState({ view: nextView }, '', nextUrl)
     setMobileMenuOpen(false)
     window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  async function addHomeScreenShortcut() {
+    if (installPrompt) {
+      await installPrompt.prompt()
+      const choice = await installPrompt.userChoice
+      setInstallPrompt(null)
+      setNotice(choice.outcome === 'accepted' ? 'Đã thêm lối tắt Cúng Kiến vào màn hình chính.' : 'Bạn có thể thêm lối tắt sau từ menu trình duyệt.')
+      return
+    }
+    const isAppleMobile = /iPhone|iPad|iPod/i.test(navigator.userAgent)
+      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    setNotice(isAppleMobile
+      ? 'Trong Safari, chạm Chia sẻ rồi chọn “Thêm vào MH chính”.'
+      : 'Mở menu trình duyệt rồi chọn “Cài đặt ứng dụng” hoặc “Thêm vào màn hình chính”.')
   }
 
   function openGuide(category = 'Tất cả') {
@@ -1560,6 +1605,7 @@ function App() {
             <button onClick={() => navigate('shop')}>Cửa hàng</button>
             <button onClick={() => navigate('cart')}>Dự toán giá ({cartCount} món)</button>
             <button onClick={() => navigate('guide')}>Hướng dẫn</button>
+            <button onClick={() => void addHomeScreenShortcut()}>{installPrompt ? 'Cài ứng dụng Cúng Kiến' : 'Thêm Cúng Kiến vào màn hình chính'}</button>
             {demoUser?.isAdmin && <button onClick={() => navigate('admin')}>Quản trị nội dung</button>}
             <button onClick={() => openAccountView(demoUser ? 'profile' : 'login')}>{demoUser ? 'Hồ sơ của tôi' : 'Đăng nhập'}</button>
           </nav>
